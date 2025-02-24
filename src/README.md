@@ -1,11 +1,21 @@
 # Instruções de utilização
 
-## Instalação do Site
+O projeto é separado em duas partes: o servidor (API), no `server/`, e o cliente (React Native), no `client/`.
+Cada parte possuirá suas próprias instruções.
 
-O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado tanto em servidores...
+## Requisitos
+
+- Golang
+
+### Opcionais (no momento)
+
+- Docker
+- Just
 
 ## Histórico de versões
 
-### [0.1.0] - DD/MM/AAAA
-#### Adicionado
-- Adicionado ...
+### [0.0.1] - 2025-02-24
+
+#### Criação do servidor
+
+- Início básico do backend
