@@ -1,23 +1,27 @@
-# TÍTULO DO PROJETO
+# EduConnect
 
-`CURSO`
+`CURSO: Sistemas para Internet`
 
-`DISCIPLINA`
+`DISCIPLINA: Projeto: Desenvolvimento de Aplicações Móveis`
 
-`SEMESTRE`
+`5º SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este projeto tem como objetivo desenvolver um aplicativo para melhorar a comunicação entre escolas públicas e responsáveis. Atualmente, muitos pais enfrentam dificuldades para receber informações importantes, como reuniões, eventos e avisos escolares, o que compromete seu acompanhamento e participação na vida acadêmica dos alunos. Além disso, professores e coordenadores encontram desafios para entrar em contato com os responsáveis, seja pela falta de retorno ou pela ausência de um canal de comunicação eficaz.
 
-## Integrantes
+A solução proposta é um aplicativo intuitivo e acessível, que permite o envio de comunicados de forma rápida e organizada. Com funcionalidades como notificações em tempo real e avisos sobre reuniões e eventos, o app busca facilitar a troca de informações entre escolas e famílias. Dessa forma, a comunicação se torna mais eficiente, permitindo que os responsáveis acompanhem melhor o desenvolvimento escolar dos alunos e que os educadores tenham um contato mais direto com as famílias.
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+## Integrantes:
 
-## Orientador
+* Alessandra Gabriele;
+* Camila Patrícia;
+* Celso Nunes;
+* Gabriel Assis;
+* Gean Campos;
+* Wesley Murat.
 
-* Nome completo do professor 1
+## Orientador: Udo Fritzke
+
+* Udo Fritzke Junior.
 
 ## Instruções de utilização
 
