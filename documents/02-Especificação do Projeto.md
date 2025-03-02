@@ -6,6 +6,22 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
+## Proto-Persona
+
+![image](https://github.com/user-attachments/assets/5f4cb753-d31a-4c81-94b6-58d682d426d5)
+
+![image](https://github.com/user-attachments/assets/ec31c99a-935e-43e1-bb71-beaf558685d2)
+
+![image](https://github.com/user-attachments/assets/6f03dd98-ba19-4f0d-9bd2-fd7d239f8028)
+
+![image](https://github.com/user-attachments/assets/aed9c64e-0619-4c1b-92a7-5fb876d25223)
+
+![image](https://github.com/user-attachments/assets/b699b726-30fb-4920-9544-d0654a37a2df)
+
+![image](https://github.com/user-attachments/assets/acce7ee3-4c25-4c2f-8d0f-25d24f5710f8)
+
+
+
 ## Arquitetura e Tecnologias
 
 o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
