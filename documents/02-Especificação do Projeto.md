@@ -1,10 +1,14 @@
 # Especificações do Projeto
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+<br/>
+<br/>
 
-### Técnicas e Ferramentas Utilizadas
+## Técnicas e Ferramentas Utilizadas
 Para a definição do projeto e a especificação das soluções, diversas técnicas e ferramentas foram utilizadas, como:
 - Proto-personas desenvolvidas no Figma
+<br/>
+  
 
 ## Proto-Persona
 
