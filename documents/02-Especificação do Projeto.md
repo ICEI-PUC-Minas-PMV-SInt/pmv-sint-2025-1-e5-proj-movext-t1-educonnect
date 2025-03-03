@@ -7,6 +7,7 @@
 ## Técnicas e Ferramentas Utilizadas
 Para a definição do projeto e a especificação das soluções, diversas técnicas e ferramentas foram utilizadas, como:
 - Proto-personas desenvolvidas no Figma
+- Matriz de Responsabilidade
 <br/>
   
 
@@ -24,7 +25,23 @@ Para a definição do projeto e a especificação das soluções, diversas técn
 
 ![image](https://github.com/user-attachments/assets/acce7ee3-4c25-4c2f-8d0f-25d24f5710f8)
 
+## História de Usuários
 
+| ID  | Perfil          | Descrição da História                               |
+|-----|-----------------|----------------------------------------------------|
+| 01  | Responsáveis   | Quero ter um canal de comunicação direto com os professores do meu filho para tirar dúvidas sobre o desenvolvimento e o comportamento dele.           |
+| 02  | Responsáveis   | Quero receber notificações sobre as próximas atividades e reuniões da escola, para me organizar melhor.            |
+| 03  | Responsáveis   | Quero poder acessar facilmente informações importantes sobre o desempenho do meu filho, como notas, faltas e ocorrências.            |
+| 04  | Responsáveis   | Quero ter acesso a um calendário com todas as atividades escolares, para me planejar e não perder nenhum evento importante.            |
+| 05  | Responsáveis   | Como responsável com mais de um filho na escola, quero visualizar as notas, faltas e informações de cada um deles no aplicativo sem precisar deslogar e alternar entre contas, para facilitar o acompanhamento.            |
+| 06  | Coordenadores   | Quero uma ferramenta que me permita enviar comunicados importantes para todos os pais, garantindo que todos recebam a informação.            |
+| 07  | Coordenadores   | Quero uma forma de confirmar a presença dos pais em reuniões e eventos escolares, para melhorar a organização e o planejamento das atividades.            |
+| 08  | Professores   | Como professor, quero poder enviar mensagens para todos os pais de uma turma de forma rápida e eficiente, para garantir que eles estejam informados sobre eventos e prazos importantes.            |
+| 09  | Professores   | Como professor, quero uma plataforma que reúna toda a comunicação com os pais em um só lugar, para evitar a dispersão de informações em diferentes canais de comunicação.           |
+| 10  | Professores   | Como professor, quero criar grupos de discussão específicos para cada sala, para facilitar a interação entre os pais e permitir que troquem informações sobre atividades escolares.           |
+| 11  | Professores   | Como professor, quero ter um sistema que me informe quais responsáveis visualizaram minhas mensagens, para garantir que todos receberam as informações importantes.           |
+| 12  | Professores   | Como professor, quero um local onde possa disponibilizar materiais complementares, como textos, vídeos e atividades, para que os alunos e responsáveis possam acessá-los facilmente.          |
+| 13  | Professores   | Como professor, quero poder enviar mensagens individuais para cada responsável sobre o progresso e comportamento do aluno, para oferecer um acompanhamento mais personalizado.          |
 
 ## Arquitetura e Tecnologias
 
@@ -34,41 +51,57 @@ o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a s
 
 Colocar a imagem do modelo construído apresentando a proposta de solução.
 
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+## Requisitos  
 
-## Requisitos
+Para garantir um desenvolvimento eficiente e focado nas necessidades dos usuários, foi utilizada a **Matriz de Esforço x Impacto** como técnica de priorização de requisitos.  
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+### Técnica Aplicada: Matriz de Esforço x Impacto
+
+A **Matriz de Esforço x Impacto** é uma abordagem visual e estratégica que auxilia na priorização de requisitos ao avaliar dois fatores principais:  
+
+- **Impacto:** O quão essencial o requisito é para a experiência do usuário e para o sucesso do projeto.  
+- **Esforço:** O nível de complexidade e recursos necessários para implementar o requisito.  
+
+### Como a técnica foi aplicada
+
+1. **Levantamento dos requisitos:** Foram identificados os requisitos funcionais e não funcionais do projeto.  
+2. **Avaliação de Impacto e Esforço:** Cada requisito foi analisado e recebeu uma pontuação de **1 a 5** para impacto e esforço.  
+3. **Categorização:** Os requisitos foram distribuídos nos quadrantes da matriz, permitindo priorizar os que possuem **alto impacto e baixo esforço** primeiro.  
+4. **Definição da Prioridade:** Com base nessa análise, os requisitos foram classificados como **Alta, Média ou Baixa prioridade**, auxiliando no planejamento das entregas.  
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID   | História de Usuário Correspondente | Descrição | Impacto (1-5) | Esforço (1-5) | Prioridade | Justificativa |
+|------|------------------------------------|-----------|--------------|--------------|------------|--------------|
+| RF01 | 01 - Canal de comunicação com professores | Implementar um chat direto entre responsáveis e professores dentro do aplicativo. | 5 | 3 | ALTA | Comunicação essencial, esforço médio. |
+| RF02 | 02 - Notificações sobre atividades e reuniões | Enviar notificações automáticas para os responsáveis sobre eventos e reuniões da escola. | 5 | 2 | ALTA | Notificações ajudam na organização, implementação simples. |
+| RF03 | 03 - Acesso ao desempenho do aluno | Criar um painel para os responsáveis visualizarem notas, faltas e ocorrências. | 5 | 3 | ALTA | Impacto alto, mas exige integração com banco de dados. |
+| RF04 | 04 - Acesso ao calendário escolar | Criar um calendário integrado com eventos e prazos escolares. | 4 | 3 | MÉDIA | Importante, mas exige sincronização com eventos dinâmicos. |
+| RF05 | 05 - Acesso a múltiplos filhos sem logout | Implementar um sistema que permita alternar entre filhos sem precisar deslogar. | 4 | 4 | MÉDIA | Impacto alto, mas esforço de implementação complexo. |
+| RF06 | 06 - Envio de comunicados por coordenadores | Criar funcionalidade para coordenadores enviarem mensagens para todos os responsáveis. | 5 | 2 | ALTA | Comunicação centralizada com esforço baixo. |
+| RF07 | 07 - Confirmação de presença em eventos | Adicionar um sistema de RSVP para reuniões e eventos escolares. | 4 | 3 | MÉDIA | Impacto positivo, esforço moderado. |
+| RF08 | 08 - Mensagens para toda a turma | Implementar envio de mensagens em massa para pais de uma turma. | 5 | 2 | ALTA | Facilita a comunicação e tem implementação simples. |
+| RF09 | 09 - Centralização da comunicação | Criar um módulo único que unifique chat, notificações e comunicados. | 5 | 4 | MÉDIA | Evita dispersão de informações, mas exige esforço alto. |
+| RF10 | 10 - Grupos de discussão por turma | Permitir a criação de grupos onde os pais possam trocar informações. | 4 | 4 | MÉDIA | Impacto moderado, requer moderação. |
+| RF11 | 11 - Confirmação de leitura das mensagens | Implementar um sistema de "mensagem lida" para professores verificarem quem recebeu os comunicados. | 5 | 3 | ALTA | Garante comunicação efetiva, esforço moderado. |
+| RF12 | 12 - Compartilhamento de materiais | Criar uma biblioteca onde professores possam disponibilizar materiais para os alunos e responsáveis. | 4 | 4 | MÉDIA | Importante, mas requer controle de armazenamento. |
+| RF13 | 13 - Feedback individual sobre alunos | Criar um sistema para que professores enviem feedbacks personalizados aos responsáveis. | 5 | 3 | ALTA | Acompanhamento essencial, esforço moderado. |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID    | Requisitos Funcionais Relacionados | Descrição                                                                                             | Impacto (1-5) | Esforço (1-5) | Prioridade |
+| ----- | ---------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------- | ------------- | ---------- |
+| RNF01 | Todas                              | Garantir que o app tenha tempos de resposta abaixo de 2 segundos para carregamento de telas.          | 5             | 3             | Alta       |
+| RNF02 | RF03, RF05                         | Implementar criptografia para proteger os dados sensíveis dos alunos e responsáveis.                  | 5             | 4             | Alta       |
+| RNF03 | RF09, RF10                         | Criar um sistema de permissões para controlar o acesso a funcionalidades específicas.                 | 4             | 3             | Média      |
+| RNF04 | Todas                              | Garantir que o app seja acessível, seguindo diretrizes do WCAG para UX inclusiva.                     | 5             | 3             | Alta       |
+| RNF05 | Todas                              | O app deve ser responsivo e adaptar-se a diferentes tamanhos de tela.                                 | 4             | 2             | Média      |
+| RNF06 | RF12                               | Garantir que o app tenha um tempo de inatividade aceitável sem travamentos ou falhas.                 | 4             | 3             | Alta       |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+
+
+
 
 ## Restrições
 
