@@ -44,29 +44,29 @@ Para a definição do projeto e a especificação das soluções, diversas técn
 | 13  | Professores   | Como professor, quero poder enviar mensagens individuais para cada responsável sobre o progresso e comportamento do aluno, para oferecer um acompanhamento mais personalizado.          |
 
 ## Restrições do Projeto
-**01.	Acessibilidade e Usabilidade**
+**1.	Acessibilidade e Usabilidade**
 .	O aplicativo deve ser intuitivo e acessível para usuários com diferentes níveis de familiaridade com tecnologia.
 .	Deve oferecer suporte a recursos de acessibilidade, como contraste ajustável e leitura de tela.
-**02.	Compatibilidade e Disponibilidade**
+**2.	Compatibilidade e Disponibilidade**
 .	O aplicativo deve estar disponível para dispositivos Android e iOS.
 .	Deve funcionar em diferentes tamanhos de tela e versões do sistema operacional dentro de um limite razoável.
-**03.	Autenticação e Segurança**
+**3.	Autenticação e Segurança**
 .	Deve haver um sistema de login seguro para pais, professores e coordenadores.
 .	O acesso às informações dos alunos deve ser restrito apenas aos responsáveis autorizados.
 .	Dados sensíveis, como notas e frequência dos alunos, devem ser protegidos por criptografia.
-**04.	Gerenciamento de Múltiplos Filhos**
+**4.	Gerenciamento de Múltiplos Filhos**
 .	O aplicativo deve permitir que responsáveis com mais de um filho na escola acessem as informações de todos os alunos em uma única conta, sem necessidade de login e logout repetitivos.
-**05.	Notificações e Comunicação**
+**5.	Notificações e Comunicação**
 .	O sistema deve permitir o envio de notificações push para alertar os responsáveis sobre reuniões, eventos e comunicados importantes.
 .	Deve ser possível confirmar a presença em eventos diretamente pelo aplicativo.
 .	Professores e coordenadores devem ter um canal de comunicação eficiente para enviar mensagens direcionadas aos responsáveis.
-**06.	Calendário Escolar e Organização**
+**6.	Calendário Escolar e Organização**
 .	O aplicativo deve incluir um calendário integrado com todas as atividades escolares, permitindo que os responsáveis se organizem melhor.
 .	As informações do calendário devem ser atualizadas pela escola e sincronizadas em tempo real.
-**07.	Escalabilidade e Desempenho**
+**7.	Escalabilidade e Desempenho**
 .	O sistema deve suportar um grande número de usuários simultaneamente, sem comprometer o desempenho.
 .	Deve ser desenvolvido utilizando boas práticas de otimização para evitar lentidão e falhas no envio de notificações.
-**08.	Registro e Controle de Atividades**
+**8.	Registro e Controle de Atividades**
 .	O aplicativo deve permitir que os responsáveis acessem um histórico de comunicados e interações anteriores.
 .	Os coordenadores e professores devem ter a possibilidade de monitorar a taxa de leitura dos comunicados para garantir que a informação está sendo recebida.
 
