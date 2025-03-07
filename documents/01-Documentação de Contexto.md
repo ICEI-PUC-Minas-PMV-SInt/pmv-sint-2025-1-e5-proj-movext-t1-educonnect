@@ -1,4 +1,4 @@
-# Introdução
+# Introdução EduConnect
 
 A comunicação eficaz entre escolas públicas e responsáveis desempenha um papel essencial no acompanhamento do desempenho dos alunos e no fortalecimento da participação familiar no ambiente educacional. No entanto, muitas escolas ainda enfrentam dificuldades para transmitir informações de forma rápida e eficiente, utilizando métodos tradicionais, como bilhetes físicos e murais informativos. Essas práticas podem gerar falhas na comunicação, impactando negativamente o engajamento dos responsáveis e a gestão escolar.
 
