@@ -19,7 +19,7 @@ A solução proposta é um aplicativo intuitivo e acessível, que permite o envi
 * Gean Campos;
 * Wesley Murat.
 
-## Orientador: Udo Fritzke
+## Orientador:
 
 * Udo Fritzke Junior.
 
