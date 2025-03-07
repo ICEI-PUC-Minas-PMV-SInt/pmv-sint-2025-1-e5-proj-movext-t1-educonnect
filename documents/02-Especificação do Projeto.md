@@ -175,6 +175,9 @@ A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
 
 > - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
+![Diagrama ER de banco de dados (pé de galinha) (2)](https://github.com/user-attachments/assets/31724c85-c495-49d7-b020-401c01ae7359)
+
+
 ## Projeto da Base de Dados
 
 O projeto da base de dados corresponde à representação das entidades e relacionamentos identificadas no Modelo ER, no formato de tabelas, com colunas e chaves primárias/estrangeiras necessárias para representar corretamente as restrições de integridade.
