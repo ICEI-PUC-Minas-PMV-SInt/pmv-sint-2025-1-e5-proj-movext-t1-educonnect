@@ -1,41 +1,52 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A comunicação eficaz entre escolas públicas e responsáveis desempenha um papel essencial no acompanhamento do desempenho dos alunos e no fortalecimento da participação familiar no ambiente educacional. No entanto, muitas escolas ainda enfrentam dificuldades para transmitir informações de forma rápida e eficiente, utilizando métodos tradicionais, como bilhetes físicos e murais informativos. Essas práticas podem gerar falhas na comunicação, impactando negativamente o engajamento dos responsáveis e a gestão escolar.
+
+O EduConnect surge como uma solução tecnológica para otimizar essa comunicação, oferecendo um aplicativo que permite o envio de notificações em tempo real sobre reuniões, eventos e comunicados escolares. Além disso, a plataforma contará com um canal de mensagens para que professores e profissionais da escola possam se comunicar diretamente com os responsáveis, individualmente ou em grupos. Dessa forma, o EduConnect visa tornar a comunicação mais acessível, reduzindo ruídos informacionais e promovendo maior integração entre escola e comunidade.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+A falta de um meio de comunicação eficiente entre escolas públicas e responsáveis compromete a disseminação de informações essenciais sobre o cotidiano escolar. Os métodos tradicionais, como comunicados impressos e recados verbais transmitidos pelos alunos, frequentemente não chegam aos responsáveis de maneira clara e no tempo necessário. Isso pode resultar na baixa participação dos pais em reuniões, dificuldades na organização de eventos escolares e falhas na comunicação sobre questões pedagógicas e administrativas.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Além disso, professores e gestores enfrentam desafios para estabelecer contato com os responsáveis, muitas vezes não obtendo retorno ou não possuindo um meio estruturado para essa interação. Esse cenário pode gerar impactos no acompanhamento do desempenho dos alunos e na construção de uma parceria efetiva entre escola e família.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+O EduConnect será implementado no contexto de escolas públicas, onde a necessidade de um canal de comunicação eficiente se faz ainda mais presente devido à limitação de infraestrutura e à diversidade socioeconômica das famílias envolvidas.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Objetivo Geral:
+Desenvolver um aplicativo móvel para melhorar a comunicação entre escolas públicas e responsáveis, garantindo a transmissão eficiente de informações sobre a rotina escolar e facilitando o contato entre professores e responsáveis.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Objetivos Específicos:
+* Criar um sistema de notificações em tempo real para avisos escolares, reuniões e eventos.
+* Implementar um canal de mensagens que permita a comunicação direta entre professores e responsáveis, de forma individual ou coletiva.
+* Fornecer uma interface intuitiva e acessível, garantindo que o aplicativo seja de fácil uso tanto para profissionais da educação quanto para responsáveis.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A comunicação eficiente entre escolas públicas e responsáveis é um fator essencial para o acompanhamento do desempenho dos alunos e para o envolvimento da família no ambiente escolar. No entanto, essa interação enfrenta desafios significativos, especialmente em instituições públicas, onde muitas informações ainda são transmitidas por bilhetes físicos ou comunicados esporádicos. Esse modelo tradicional apresenta falhas, como perda de mensagens, falta de retorno dos responsáveis e dificuldades dos professores para estabelecer contato direto com os pais.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Além disso, a desigualdade no acesso à tecnologia agrava essa situação. Segundo a pesquisa TIC Educação 2022, apenas 58% das escolas brasileiras possuem computadores e internet disponíveis para os alunos, sendo que, em muitas delas, a qualidade da conexão não é suficiente para suporte educacional. Isso evidencia a disparidade tecnológica entre escolas públicas e privadas, impactando tanto o ensino quanto a comunicação entre professores e responsáveis.
+Diante desse cenário, o EduConnect foi idealizado para modernizar e facilitar a troca de informações entre escolas e famílias.
+ 
+A implementação dessa solução pode trazer diversos benefícios, tais como:
+* Redução de falhas na comunicação: o envio de mensagens diretas e notificações automatizadas reduz a perda de informações importantes.
+* Maior participação dos responsáveis: ao facilitar o acesso a comunicados escolares, o aplicativo incentiva a presença ativa das famílias na vida escolar dos alunos.
+* Apoio à gestão escolar: o uso de um meio digital organizado possibilita melhor controle e monitoramento da comunicação, evitando desencontros e falhas no processo informacional.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Ao integrar a tecnologia à rotina escolar, o projeto busca reduzir as barreiras na comunicação, incentivar a participação dos responsáveis e contribuir para uma educação mais acessível e eficiente.
 
 ## Relação com a Extensão Universitária
 
-Relacionar a situação-problema da organização com o impacto social esperado com a implantação do sistema sociotécnico.
+Este projeto se alinha aos princípios da Extensão Universitária, pois aplica conhecimentos acadêmicos para resolver um problema real da comunidade escolar. O EduConnect não apenas aprimora a comunicação entre escola e responsáveis, mas também promove inclusão digital e eficiência na gestão educacional.
+
+O impacto social esperado inclui:
+* Fortalecimento do vínculo entre escola e família, garantindo um acompanhamento mais próximo da vida escolar dos alunos.
+* Melhoria na participação dos responsáveis, tornando-os mais presentes e informados sobre a rotina escolar.
+* Facilitação do trabalho dos professores e gestores, oferecendo uma plataforma prática e segura para a comunicação.
 
 ## Descrição do Parceiro
 
-Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
+O projeto EduConnect será desenvolvido em parceria com escolas públicas, que enfrentam dificuldades na comunicação com os responsáveis pelos alunos. Essas instituições, muitas vezes, não dispõem de ferramentas tecnológicas para otimizar essa interação, dependendo de métodos convencionais que podem ser pouco eficientes.
+
+A implementação do EduConnect possibilitará a modernização da comunicação escolar, garantindo que informações importantes sejam transmitidas com maior rapidez e clareza. Além disso, a plataforma oferecerá aos professores um meio seguro e prático para manter contato com os responsáveis, promovendo um ambiente educacional mais colaborativo e acessível.
