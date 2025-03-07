@@ -139,6 +139,12 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Não pode ser desenvolvido um módulo de backend        |
+|03| O aplicativo deve ser intuitivo e acessível para usuários com diferentes níveis de familiaridade com tecnologia |
+|04| O aplicativo deve estar disponível para dispositivos Android e iOS |
+|05| O acesso às informações dos alunos deve ser restrito apenas aos responsáveis autorizados |
+|06| O sistema deve permitir o envio de notificações push para alertar os responsáveis sobre reuniões, eventos e comunicados importantes |
+|07| O sistema deve suportar um grande número de usuários simultaneamente, sem comprometer o desempenho |
+|08| O aplicativo deve ser responsivo e adaptar-se a diferentes tamanhos de tela |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
