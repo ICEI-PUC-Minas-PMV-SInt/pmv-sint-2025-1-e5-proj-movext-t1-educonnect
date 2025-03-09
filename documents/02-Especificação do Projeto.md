@@ -143,10 +143,24 @@ A **Matriz de Esforço x Impacto** é uma abordagem visual e estratégica que au
 | RNF06 | RF12                               | Garantir que o app tenha um tempo de inatividade aceitável sem travamentos ou falhas.                 | 4             | 3             | Alta       |
 
 
+### Matriz de Rastreabilidade de Requisitos
 
+| ID    | Caso de Uso Relacionados                                                           | História do Usuário Correspondente            | Requisito Funcional                                                                                 | Módulo do Sistema    |
+| ----- | ---------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| RNF01 | UC01 - Enviar mensagens para professores, UC02 - Receber mensagens de professores  | 01 - Canal de comunicação com professores     | Implementar chat direto entre responsáveis e professores dentro do app.                             | Comunicação          |
+| RNF02 | UC03 - Receber notificações automáticas                                            | 02 - Notificações sobre atividades e reuniões | Enviar notificações automáticas para os responsáveis sobre eventos e reuniões da escola.            | Notificações         | 
+| RNF03 | UC04 - Consultar notas e faltas, UC05 - Visualizar ocorrências                     | 03 - Acesso ao desempenho do aluno            | Criar um painel para os responsáveis visualizarem notas, faltas e ocorrências.                      | Desempenho Acadêmico |
+| RNF04 | UC06 - Visualizar calendário escolar                                               | 04 - Acesso ao calendário escolar             | Criar um calendário integrado com eventos e prazos escolares.                                       | Calendário           | 
+| RNF05 | UC07 - Alternar entre perfis de filhos                                             | 05 - Acesso a múltiplos filhos sem logout     | Implementar um sistema que permita alternar entre filhos sem precisar deslogar.                     | Conta do Usuário     | 
+| RNF06 | UC08 - Enviar comunicados gerais                                                   | 06 - Envio de comunicados por coordenadores   | Criar funcionalidade para coordenadores enviarem mensagens para todos os responsáveis.              | Comunicação          | 
+| RNF07 | UC09 - Confirmar presença em eventos escolares                                     | 07 - Confirmação de presença em eventos       | Adicionar um sistema de RSVP para reuniões e eventos escolares.                                     | Eventos              | 
+| RNF08 | UC10 - Enviar mensagens para turma                                                 | 08 - Mensagens para toda a turma              | Implementar envio de mensagens em massa para pais de uma turma.                                     | Comunicação          | 
+| RNF09 | UC11 - Acessar módulo de comunicação                                               | 09 - Centralização da comunicação             | Criar um módulo único que unifique chat, notificações e comunicados.                                | Comunicação          | 
+| RNF10 | UC12 - Participar de grupos de discussão                                           | 10 - Grupos de discussão por turma            | Permitir a criação de grupos onde os pais possam trocar informações.                                | Grupos e Fóruns      | 
+| RNF11 | UC13 - Verificar status de leitura das mensagens                                   | 11 - Confirmação de leitura das mensagens     | Implementar sistema de "mensagem lida" para professores verificarem quem recebeu os comunicados.    | Comunicação          | 
+| RNF12 | UC14 - Acessar biblioteca de materiais                                             | 12 - Compartilhamento de materiais            | Criar uma biblioteca onde professores possam disponibilizar materiais para os alunos e responsáveis.| Biblioteca Digital   | 
+| RNF13 | UC15 - Enviar feedback individualizado                                             | 13 - Feedback individual sobre alunos         | Criar um sistema para que professores enviem feedbacks personalizados aos responsáveis.             | Desempenho Acadêmico | 
 
-
-## Matriz de rastreabilidade
 
 ## Diagrama de Casos de Uso
 
