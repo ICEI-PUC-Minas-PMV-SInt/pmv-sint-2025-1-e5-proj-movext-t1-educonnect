@@ -8,6 +8,7 @@
 Para a definição do projeto e a especificação das soluções, diversas técnicas e ferramentas foram utilizadas, como:
 - Proto-personas desenvolvidas no Figma
 - Matriz de Responsabilidade
+- Modelo ER no Lucidchart
 <br/>
   
 
@@ -44,31 +45,46 @@ Para a definição do projeto e a especificação das soluções, diversas técn
 | 13  | Professores   | Como professor, quero poder enviar mensagens individuais para cada responsável sobre o progresso e comportamento do aluno, para oferecer um acompanhamento mais personalizado.          |
 
 ## Restrições do Projeto
-1.	**Acessibilidade e Usabilidade**
-.	O aplicativo deve ser intuitivo e acessível para usuários com diferentes níveis de familiaridade com tecnologia.
-.	Deve oferecer suporte a recursos de acessibilidade, como contraste ajustável e leitura de tela.
-2.	**Compatibilidade e Disponibilidade**
-.	O aplicativo deve estar disponível para dispositivos Android e iOS.
-.	Deve funcionar em diferentes tamanhos de tela e versões do sistema operacional dentro de um limite razoável.
-3.	**Autenticação e Segurança**
-.	Deve haver um sistema de login seguro para pais, professores e coordenadores.
-.	O acesso às informações dos alunos deve ser restrito apenas aos responsáveis autorizados.
-.	Dados sensíveis, como notas e frequência dos alunos, devem ser protegidos por criptografia.
-4.	**Gerenciamento de Múltiplos Filhos**
-.	O aplicativo deve permitir que responsáveis com mais de um filho na escola acessem as informações de todos os alunos em uma única conta, sem necessidade de login e logout repetitivos.
-5.	**Notificações e Comunicação**
-.	O sistema deve permitir o envio de notificações push para alertar os responsáveis sobre reuniões, eventos e comunicados importantes.
-.	Deve ser possível confirmar a presença em eventos diretamente pelo aplicativo.
-.	Professores e coordenadores devem ter um canal de comunicação eficiente para enviar mensagens direcionadas aos responsáveis.
-6.	**Calendário Escolar e Organização**
-.	O aplicativo deve incluir um calendário integrado com todas as atividades escolares, permitindo que os responsáveis se organizem melhor.
-.	As informações do calendário devem ser atualizadas pela escola e sincronizadas em tempo real.
-7.	**Escalabilidade e Desempenho**
-.	O sistema deve suportar um grande número de usuários simultaneamente, sem comprometer o desempenho.
-.	Deve ser desenvolvido utilizando boas práticas de otimização para evitar lentidão e falhas no envio de notificações.
-8.	**Registro e Controle de Atividades**
-.	O aplicativo deve permitir que os responsáveis acessem um histórico de comunicados e interações anteriores.
-.	Os coordenadores e professores devem ter a possibilidade de monitorar a taxa de leitura dos comunicados para garantir que a informação está sendo recebida.
+
+### 1. Acessibilidade e Usabilidade
+| ID  | Restrição  |  
+|----|---------------------------------------------------------------|  
+| 01 | O aplicativo deve ser intuitivo e acessível para usuários com diferentes níveis de familiaridade com tecnologia. |  
+| 02 | O design deve seguir as diretrizes de acessibilidade da WCAG (Web Content Accessibility Guidelines). |  
+| 03 | Deve oferecer suporte a navegação por teclado e gestos para melhorar a experiência de usuários com deficiência motora. |  
+
+### 2. Compatibilidade e Disponibilidade
+| ID  | Restrição  |  
+|----|---------------------------------------------------------------|  
+| 04 | O aplicativo deve estar disponível para dispositivos Android e iOS. |  
+| 05 | O aplicativo deve funcionar em diferentes tamanhos de tela e versões do sistema operacional dentro de um limite razoável. |  
+
+### 3. Segurança e Privacidade
+| ID  | Restrição  |  
+|----|---------------------------------------------------------------|  
+| 06 | Deve haver um sistema de login seguro para pais, professores e coordenadores. |  
+| 07 | O acesso às informações dos alunos deve ser restrito apenas aos responsáveis autorizados. |  
+
+### 4. Funcionalidade e Desempenho
+| ID  | Restrição  |  
+|----|---------------------------------------------------------------|  
+| 08 | O sistema deverá consumir uma API para integração com outras funcionalidades. |  
+| 09 | O aplicativo deve permitir que responsáveis com mais de um filho na escola acessem as informações de todos os alunos em uma única conta, sem necessidade de login e logout repetitivos. |  
+| 10 | O sistema deve permitir o envio de notificações push para alertar os responsáveis sobre reuniões, eventos e comunicados importantes. |  
+| 11 | Deve ser possível confirmar a presença em eventos diretamente pelo aplicativo. |  
+| 12 | Professores e coordenadores devem ter um canal de comunicação eficiente para enviar mensagens direcionadas aos responsáveis. |  
+| 13 | O sistema deve suportar um grande número de usuários simultaneamente, sem comprometer o desempenho. |  
+| 14 | O sistema deve ser desenvolvido utilizando boas práticas de otimização para evitar lentidão e falhas no envio de notificações. |  
+
+### 5. Organização e Comunicação
+| ID  | Restrição  |  
+|----|---------------------------------------------------------------|  
+| 15 | O aplicativo deve incluir um calendário integrado com todas as atividades escolares, permitindo que os responsáveis se organizem melhor. |  
+| 16 | As informações do calendário devem ser atualizadas pela escola e sincronizadas em tempo real. |  
+| 17 | O aplicativo deve permitir que os responsáveis acessem um histórico de comunicados e interações anteriores. |  
+| 18 | Coordenadores e professores devem te
+
+
 
 
 ## Arquitetura e Tecnologias
@@ -130,21 +146,7 @@ A **Matriz de Esforço x Impacto** é uma abordagem visual e estratégica que au
 
 
 
-
-## Restrições
-
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-|03| O aplicativo deve ser intuitivo e acessível para usuários com diferentes níveis de familiaridade com tecnologia |
-|04| O aplicativo deve estar disponível para dispositivos Android e iOS |
-|05| O acesso às informações dos alunos deve ser restrito apenas aos responsáveis autorizados |
-|06| O sistema deve permitir o envio de notificações push para alertar os responsáveis sobre reuniões, eventos e comunicados importantes |
-|07| O sistema deve suportar um grande número de usuários simultaneamente, sem comprometer o desempenho |
-|08| O aplicativo deve ser responsivo e adaptar-se a diferentes tamanhos de tela |
+## Matriz de rastreabilidade
 
 ## Diagrama de Casos de Uso
 
