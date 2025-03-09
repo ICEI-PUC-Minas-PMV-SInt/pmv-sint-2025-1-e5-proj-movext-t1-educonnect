@@ -92,29 +92,20 @@ Para a definição do projeto e a especificação das soluções, diversas técn
 
 ## Arquitetura e Tecnologias
 
+O servidor será implementado com o [Supabase](https://supabase.com/), um serviço/stack de produtos de código aberto feito como uma alternativa ao Firebase:
+
+| Tecnologia   | Explicação                                                                                                                                                                   |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PostgreSQL   | Banco de dados relacional                                                                                                                                                    |
+| PostgREST    | Mapeador do banco de dados feito em Haskell para consultas _fine-grained_ (como filtros, por exemplo)                                                                        |
+| GoTrue       | Mailserver (SMTP)                                                                                                                                                            |
+| pg-meta      | Um _connection pooler_ para integrar e normalizar as comunicações entre outros serviços e o banco de dados (como uma versão simplificada de algo como RabbitMQ, por exemplo) |
+| Realtime     | Uma biblioteca do próprio Supabase para comunicação em tempo real entre o backend e o frontend. Útil para coisas como o chat, por exemplo                                    |
+| React Native | Tecnologia do frontend                                                                                                                                                       |
+
+Tudo isto unido pelo serviço de autenticação do Supabase, que também aceita associação SSO (como OAuth2, SAML, etc.) como de contas do Google, Microsoft, Apple, etc.
+
 ![Diagrama de tecnologias](./img/02-diagrama-tecnologias.png)
-
-Uma breve explicação sobre as tecnologias utilizadas:
-
-| Tecnologia      | Finalidade                                                                                                                                                                                                                                 |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| PostgreSQL      | Banco de dados relacional                                                                                                                                                                                                                  |
-| Redis           | Banco de dados key-value, geralmente utilizado como um cache para o aplicativo em geral, onde, por exemplo, consultas semelhantes não precisarão ir novamente fazer todo o trajeto até o Postgres para retornar os mesmos dados novamente. |
-| ASP.NET Web API | O "núcleo" da API, que vai comunicar com todas as partes e gerenciar a utilização de cada recurso.                                                                                                                                         |
-| RabbitMQ        | Um _message broker_; um sistema utilizado para comunicação entre diferentes partes de sistemas por meio de uma "fila".                                                                                                                     |
-| GraphQL         | Alternativa ao REST, para uma consulta e mutação de dados de forma _fine grained_. (Pode ser removido)                                                                                                                                     |
-| React Native    | Plataforma para o frontend.                                                                                                                                                                                                                |
-| Docker          | Contêineres para o backend.                                                                                                                                                                                                                |
-
-Ainda não decidido:
-
-- Mailserver
-- Servidor para mensagens SMS/MMS
-- Telemetria (provavelmente OTel)
-- _Storage Bucket_ (ex: S3 do AWS, R2 do Cloudflare, etc.)
-- Integrações com sistemas de pagamentos oficiais (como Pix, por exemplo), caso seja necessário.
-
-Esta última lista são, em sua maioria, partes menos prioritárias, ou que será necessário o projeto avançar até uma certa etapa para fazer uma escolha condizente.
 
 ## Project Model Canvas
 
@@ -217,7 +208,7 @@ A equipe de desenvolvimento do **EduConnect** contará com os seguintes profissi
 | Analista de Requisitos              | 1          | 20h/semana    | 60,00           | 4.800,00                   |
 | Designer UX/UI                      | 1          | 20h/semana    | 70,00           | 5.600,00                   |
 | Desenvolvedor Mobile (React Native) | 2          | 40h/semana    | 90,00           | 28.800,00                  |
-| Desenvolvedor Backend (Firebase)    | 1          | 40h/semana    | 85,00           | 13.600,00                  |
+| Desenvolvedor Backend (Supabase)    | 1          | 40h/semana    | 85,00           | 13.600,00                  |
 | Tester (QA)                         | 1          | 20h/semana    | 65,00           | 5.200,00                   |
 | Suporte Técnico                     | 1          | 10h/semana    | 50,00           | 2.000,00                   |
 | **Total Mensal**                    | **-**      | **-**         | **-**           | **66.400,00**              |
@@ -228,15 +219,15 @@ O tempo estimado para o desenvolvimento inicial do projeto é de **6 meses**, re
 
 ### 3.1. Hospedagem e Backend
 
-O aplicativo utilizará **Firebase** como backend e serviços da **Google Cloud** para armazenamento e processamento de dados.
+O aplicativo utilizará o **Supabase** como backend para autenticação, processamento de dados, e, ao menos inicialmente, para o armazenamento de arquivos estáticos também (ex: imagens)
 
-| Item                                       | Custo Mensal (R$) |
-| ------------------------------------------ | ----------------- |
-| Firebase (Plano Blaze - Uso Estimado)      | 500,00            |
-| Hospedagem de Frontend (Vercel ou Netlify) | 50,00             |
-| Domínio (Registro e Manutenção)            | 40,00             |
-| Certificado SSL                            | 100,00            |
-| **Total Mensal**                           | **690,00**        |
+| Item                            | Custo Mensal (R$)                      |
+| ------------------------------- | -------------------------------------- |
+| Supabase (plano Pro)            | 250,00                                 |
+| Hospedagem backend              | 50,00 (VPS), +150,00 (Azure, AWS, GCP) |
+| Domínio (Registro e Manutenção) | 40,00                                  |
+| Certificado SSL                 | Gratuito                               |
+| **Total Mensal**                | **340,00**                             |
 
 ### 3.2. Ferramentas de Desenvolvimento
 
@@ -274,11 +265,11 @@ Para garantir que o **EduConnect** alcance seu público-alvo, serão utilizados 
 | Categoria                             | Custo Mensal (R$) | Custo Total (6 meses) (R$) |
 | ------------------------------------- | ----------------- | -------------------------- |
 | Equipe de Desenvolvimento             | 66.400,00         | 398.400,00                 |
-| Infraestrutura (Hospedagem e Backend) | 690,00            | 4.140,00                   |
+| Infraestrutura (Hospedagem e Backend) | 340,00            | 2.040,00                   |
 | Ferramentas de Desenvolvimento        | 330,00            | 1.980,00                   |
 | Licenças e Assinaturas                | 60,00             | 360,00                     |
 | Marketing e Divulgação                | 1.800,00          | 10.800,00                  |
-| **Total**                             | **69.280,00**     | **415.680,00**             |
+| **Total**                             | **69.280,00**     | **413.580,00**             |
 
 ## 5. Considerações Finais
 
