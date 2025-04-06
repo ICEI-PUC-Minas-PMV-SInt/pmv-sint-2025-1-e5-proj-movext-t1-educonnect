@@ -294,7 +294,7 @@ BPMN é uma notação padronizada usada para desenhar e entender processos de ne
 •	Automação de processos com ferramentas de BPM (ex: Camunda, Bizagi).
 •	Comunicação entre áreas técnicas e não técnicas, porque BPMN é visual e fácil de entender.
 
-![image](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2025-1-e5-proj-movext-t1-educonnect/issues/9#issue-2975175671)
+[![image](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2025-1-e5-proj-movext-t1-educonnect/issues/9#issue-2975175671)](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2025-1-e5-proj-movext-t1-educonnect/issues/9#issue-2975175671)
 
 
 
