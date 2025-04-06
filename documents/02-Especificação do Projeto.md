@@ -283,10 +283,10 @@ Após o lançamento, os custos operacionais se tornarão mais previsíveis, perm
 BPMN é uma notação padronizada usada para desenhar e entender processos de negócio. Ela permite que analistas de negócios, desenvolvedores e stakeholders visualizem claramente como os processos funcionam dentro de uma organização.
 
 **Componentes básicos do BPMN:**
-•	Eventos (círculos): algo que inicia, interrompe ou finaliza um processo (ex: recebimento de uma mensagem, passagem de tempo).
-•	Atividades (retângulos com cantos arredondados): representam tarefas a serem executadas.
-•	Decisões/Gateways (losangos): pontos de decisão que podem levar a caminhos diferentes no processo.
-•	Fluxos (setas): conectam os elementos, mostrando a sequência do processo.
+- Eventos (círculos): algo que inicia, interrompe ou finaliza um processo (ex: recebimento de uma mensagem, passagem de tempo).
+- Atividades (retângulos com cantos arredondados): representam tarefas a serem executadas.
+- Decisões/Gateways (losangos): pontos de decisão que podem levar a caminhos diferentes no processo.
+- Fluxos (setas): conectam os elementos, mostrando a sequência do processo.
 
 **BPMN se aplica no desenvolvimento?**
 •	Fase de análise de requisitos, para entender como o sistema precisa funcionar.
