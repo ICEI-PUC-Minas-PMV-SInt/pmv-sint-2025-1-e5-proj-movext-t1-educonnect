@@ -289,10 +289,10 @@ BPMN é uma notação padronizada usada para desenhar e entender processos de ne
 - Fluxos (setas): conectam os elementos, mostrando a sequência do processo.
 
 **BPMN se aplica no desenvolvimento?**
-•	Fase de análise de requisitos, para entender como o sistema precisa funcionar.
-•	Desenho de fluxos de trabalho antes de implementar.
-•	Automação de processos com ferramentas de BPM (ex: Camunda, Bizagi).
-•	Comunicação entre áreas técnicas e não técnicas, porque BPMN é visual e fácil de entender.
+- Fase de análise de requisitos, para entender como o sistema precisa funcionar.
+- Desenho de fluxos de trabalho antes de implementar.
+- Automação de processos com ferramentas de BPM (ex: Camunda, Bizagi).
+- Comunicação entre áreas técnicas e não técnicas, porque BPMN é visual e fácil de entender.
 
 ![image](https://github.com/celsonunessoares/celsonunessoares/blob/main/BPMN%203%20-%20Buscar%20Informa%C3%A7%C3%B5es.jpg?raw=true)
 
