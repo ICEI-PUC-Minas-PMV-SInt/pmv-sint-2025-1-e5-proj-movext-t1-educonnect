@@ -276,3 +276,23 @@ Para garantir que o **EduConnect** alcance seu público-alvo, serão utilizados 
 O desenvolvimento do **EduConnect** exige um investimento inicial significativo, mas justificado pela importância da solução e pelo impacto positivo esperado na comunicação entre escolas públicas e responsáveis. A implementação da solução visa otimizar a troca de informações, reduzir falhas na comunicação e promover maior envolvimento dos responsáveis na vida acadêmica dos alunos.
 
 Após o lançamento, os custos operacionais se tornarão mais previsíveis, permitindo a busca de parcerias e possíveis fontes de financiamento para garantir a sustentabilidade do projeto.
+
+
+## BPMN - Business Process Model and Notation
+
+BPMN é uma notação padronizada usada para desenhar e entender processos de negócio. Ela permite que analistas de negócios, desenvolvedores e stakeholders visualizem claramente como os processos funcionam dentro de uma organização.
+
+**Componentes básicos do BPMN:**
+•	Eventos (círculos): algo que inicia, interrompe ou finaliza um processo (ex: recebimento de uma mensagem, passagem de tempo).
+•	Atividades (retângulos com cantos arredondados): representam tarefas a serem executadas.
+•	Decisões/Gateways (losangos): pontos de decisão que podem levar a caminhos diferentes no processo.
+•	Fluxos (setas): conectam os elementos, mostrando a sequência do processo.
+
+**BPMN se aplica no desenvolvimento?**
+•	Fase de análise de requisitos, para entender como o sistema precisa funcionar.
+•	Desenho de fluxos de trabalho antes de implementar.
+•	Automação de processos com ferramentas de BPM (ex: Camunda, Bizagi).
+•	Comunicação entre áreas técnicas e não técnicas, porque BPMN é visual e fácil de entender.
+
+
+
