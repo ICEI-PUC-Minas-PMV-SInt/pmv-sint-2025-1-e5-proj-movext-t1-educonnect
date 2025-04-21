@@ -299,3 +299,56 @@ BPMN é uma notação padronizada usada para desenhar e entender processos de ne
 O fluxo fica mais coerente, onde o usuário sem cadastro é direcionado a buscar as informações necessárias e realizar o cadastro, sem a possibilidade de realizar o logout antes disso. E o usuário com cadastro, após realizar as ações específicas do seu perfil, é direcionado para a etapa de logout.
 
 
+
+## Indicadores de Desempenho:
+
+Para garantir a eficácia do **EduConnect** na melhoria da comunicação entre escolas e responsáveis, realizamos um levantamento com educadores e gestores escolares. A pesquisa, aplicada via Google Forms, nos permitiu identificar as principais dificuldades na comunicação atual e definir indicadores estratégicos para acompanhar o impacto da plataforma.
+
+### Objetivo dos Indicadores
+
+Avaliar continuamente os seguintes aspectos:
+- Eficiência na troca de informações entre escola e responsáveis.
+- Frequência de interação via aplicativo.
+- Tempo de resposta dos pais às comunicações.
+- Satisfação dos usuários com os canais de comunicação escolar.
+- Acessibilidade e facilidade de uso da plataforma.
+
+---
+
+### Indicadores Estratégicos
+
+| Indicador | Descrição | Meta Inicial |
+|----------|-----------|--------------|
+| **Eficiência da comunicação** | Percentual de usuários que consideram a comunicação eficiente após uso do EduConnect | Aumentar para **+70%** (hoje apenas 35%) |
+| **Tempo de resposta dos responsáveis** | Tempo médio para visualizar/responder notificações | Redução para **menos de 12h** |
+| **Canal de comunicação preferencial** | Identificação dos meios mais usados (WhatsApp, bilhetes, e-mail, etc.) | Substituir bilhetes por canal digital em **+60%** das escolas |
+| **Engajamento dos responsáveis** | Frequência de interação no app (visualização, resposta, comentários) | Aumentar a taxa de engajamento mensal em **+50%** |
+| **Notificações em tempo real** | Adesão ao recurso de alertas e sua eficácia percebida | Alcançar **+90%** de aprovação |
+| **Acesso contínuo e prático** | Facilidade de acesso e uso da plataforma sem dificuldades técnicas | Manter taxa de satisfação em **+80%** dos usuários |
+
+---
+
+### Gráficos da Pesquisa Aplicada
+
+#### 1. Eficiência da Comunicação Atual
+![Eficiência da Comunicação](aee8796d-5c67-426e-b9cd-74b55816bb0d.png)
+
+#### 2. Meios Utilizados Pela Escola
+![Meios de Comunicação](2280d3dd-0ac2-45ab-9db0-adb57d21cc9a.png)
+
+#### 3. Desafios Enfrentados
+![Desafios na Comunicação](bda1b155-9278-4f64-9601-c7695d8b36a7.png)
+
+#### 4. Como um Aplicativo Pode Ajudar
+![Melhorias com Aplicativo](220cd06f-8361-422e-ba0f-ec007f4b6738.png)
+
+#### 5. Notificações em Tempo Real
+![Notificações em Tempo Real](875af91a-be7d-4d49-9388-5f7b94840df6.png)
+
+---
+
+### Análise dos Resultados
+
+Os dados mostram que **65% dos entrevistados consideram a comunicação ineficiente**, sendo o bilhete impresso (72,5%) o principal meio ainda utilizado. A falta de retorno dos pais (67,5%) e a ausência de notificações em tempo real estão entre os maiores obstáculos.
+
+Ao propor um aplicativo com foco em notificações instantâneas, centralização da informação e facilidade de acesso, o **EduConnect** se alinha diretamente às necessidades detectadas. Com **97,4% dos entrevistados afirmando que notificações em tempo real ajudariam na interação**, esse será um dos pilares estratégicos da plataforma.
