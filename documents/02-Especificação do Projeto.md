@@ -330,25 +330,38 @@ Avaliar continuamente os seguintes aspectos:
 
 ### Gráficos da Pesquisa Aplicada
 
+
+
 #### 1. Eficiência da Comunicação Atual
-![Eficiência da Comunicação](![image](https://github.com/user-attachments/assets/92df2973-0fc8-4f49-9add-7cd6b1650e5e)
-)
+![Pergunta 1 e 2](https://github.com/user-attachments/assets/d82ac917-3ce0-4a71-b07f-59beea2d650d)
+
+
+
+
 
 #### 2. Meios Utilizados Pela Escola
-![Meios de Comunicação](![image](https://github.com/user-attachments/assets/675ca37f-1980-4d8b-8004-f516477ba6da)
-)
+![Pergunta 3 e 4](https://github.com/user-attachments/assets/ad24afb6-939f-4889-a6ae-5d412faa2c2f)
+
+
+
+
 
 #### 3. Desafios Enfrentados
-![Desafios na Comunicação](![image](https://github.com/user-attachments/assets/9f0e3fd9-0fb2-43fd-bf27-5a1833bfefbb)
-)
+![Pergunta 5 e 6](https://github.com/user-attachments/assets/1de85de6-1bb1-416b-af55-0d8b05c94505)
+
+
+
+
 
 #### 4. Como um Aplicativo Pode Ajudar
-![Melhorias com Aplicativo](![image](https://github.com/user-attachments/assets/2a450f4c-516e-4180-b0a8-8d18d81d0493)
-)
+![Pergunta 7 e 8](https://github.com/user-attachments/assets/ae2f354d-1dec-4059-bb2b-93db34cb056e)
+
+
+
+
 
 #### 5. Notificações em Tempo Real
-![Notificações em Tempo Real](![image](https://github.com/user-attachments/assets/974d5c3a-bb5b-4910-8723-e711922eb800)
-)
+![Pergunta 9](https://github.com/user-attachments/assets/a6fb2b01-be51-4646-a5ae-f1dcbe6b21a0)
 
 ---
 
