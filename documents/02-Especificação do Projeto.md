@@ -331,23 +331,28 @@ Avaliar continuamente os seguintes aspectos:
 ### Gráficos da Pesquisa Aplicada
 
 #### 1. Eficiência da Comunicação Atual
-![Eficiência da Comunicação](aee8796d-5c67-426e-b9cd-74b55816bb0d.png)
+![Eficiência da Comunicação](![image](https://github.com/user-attachments/assets/92df2973-0fc8-4f49-9add-7cd6b1650e5e)
+)
 
 #### 2. Meios Utilizados Pela Escola
-![Meios de Comunicação](2280d3dd-0ac2-45ab-9db0-adb57d21cc9a.png)
+![Meios de Comunicação](![image](https://github.com/user-attachments/assets/675ca37f-1980-4d8b-8004-f516477ba6da)
+)
 
 #### 3. Desafios Enfrentados
-![Desafios na Comunicação](bda1b155-9278-4f64-9601-c7695d8b36a7.png)
+![Desafios na Comunicação](![image](https://github.com/user-attachments/assets/9f0e3fd9-0fb2-43fd-bf27-5a1833bfefbb)
+)
 
 #### 4. Como um Aplicativo Pode Ajudar
-![Melhorias com Aplicativo](220cd06f-8361-422e-ba0f-ec007f4b6738.png)
+![Melhorias com Aplicativo](![image](https://github.com/user-attachments/assets/2a450f4c-516e-4180-b0a8-8d18d81d0493)
+)
 
 #### 5. Notificações em Tempo Real
-![Notificações em Tempo Real](875af91a-be7d-4d49-9388-5f7b94840df6.png)
+![Notificações em Tempo Real](![image](https://github.com/user-attachments/assets/974d5c3a-bb5b-4910-8723-e711922eb800)
+)
 
 ---
 
-### Análise dos Resultados
+### Análise dos Resultados:
 
 Os dados mostram que **65% dos entrevistados consideram a comunicação ineficiente**, sendo o bilhete impresso (72,5%) o principal meio ainda utilizado. A falta de retorno dos pais (67,5%) e a ausência de notificações em tempo real estão entre os maiores obstáculos.
 
