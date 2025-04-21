@@ -365,8 +365,54 @@ Avaliar continuamente os seguintes aspectos:
 
 ---
 
-### Análise dos Resultados:
+### Análise dos Resultados
 
 Os dados mostram que **65% dos entrevistados consideram a comunicação ineficiente**, sendo o bilhete impresso (72,5%) o principal meio ainda utilizado. A falta de retorno dos pais (67,5%) e a ausência de notificações em tempo real estão entre os maiores obstáculos.
 
 Ao propor um aplicativo com foco em notificações instantâneas, centralização da informação e facilidade de acesso, o **EduConnect** se alinha diretamente às necessidades detectadas. Com **97,4% dos entrevistados afirmando que notificações em tempo real ajudariam na interação**, esse será um dos pilares estratégicos da plataforma.
+
+
+
+## Planejamento do Projeto:
+
+O projeto desenvolvido foi o **EduConnect**, uma iniciativa extensionista voltada para melhorar a comunicação entre escolas públicas e os responsáveis pelos alunos. O planejamento do projeto foi essencial para garantir o cumprimento dos prazos, a organização das tarefas e a colaboração eficiente da equipe.
+
+### Equipe Envolvida
+O projeto contou com **6 integrantes**, que atuaram de forma colaborativa em todas as fases do desenvolvimento. Cada membro foi responsável por funções específicas como análise, design, desenvolvimento e testes.
+
+### Custos
+Por se tratar de um projeto **extensionista**, **não houve custos financeiros envolvidos**. A proposta do EduConnect é oferecer uma solução gratuita e acessível às escolas públicas.
+
+### Ferramentas Utilizadas
+
+| Ferramenta      | Finalidade                            |
+|------------------|----------------------------------------|
+| **Figma**        | Criação de protótipos e interfaces      |
+| **Miro**         | Mapeamento de ideias e fluxos          |
+| **Supabase**     | Banco de dados                         |
+| **React Native** | Desenvolvimento do aplicativo mobile   |
+
+
+### Cronograma de Tarefas
+
+O projeto foi dividido em três grandes etapas, conforme o planejamento:
+
+#### Fase 1 – Estruturação da Base e Definição de Objetivos
+- Definição dos perfis de usuários.
+- Estabelecimento das funcionalidades principais.
+- Direcionamento dos objetivos do EduConnect.
+
+#### Fase 2 – Interface e Banco de Dados
+- Criação dos protótipos no Figma.
+- Modelagem e implementação do banco de dados com Supabase.
+
+#### Fase 3 – Estética Final e Testes
+- Desenvolvimento do front-end com React Native.
+- Ajustes de layout e identidade visual.
+- Testes com profissionais da área da educação.
+
+### Relatórios Analíticos
+
+Para embasar as decisões do projeto, foi aplicado um **formulário digital** com profissionais da educação, utilizando o Google Forms. Os dados obtidos nortearam o desenvolvimento das funcionalidades mais relevantes e ajudaram a compreender os principais desafios enfrentados pelas escolas no quesito comunicação.
+
+Este formulário serviu como **relatório analítico base** do EduConnect, possibilitando um planejamento mais alinhado às necessidades reais do público-alvo.
