@@ -1,8 +1,9 @@
-import { client } from "@/utils/client";
-import { Button, Text, TextInput } from "@react-native-material/core";
+import { styles } from "@/lib/styles";
+import { client } from "@/lib/utils/client";
 import { useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import { Alert, View } from "react-native";
+import { Alert } from "react-native";
+import { Button, Surface, Text, TextInput } from "react-native-paper";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -15,25 +16,27 @@ const Page = () => {
 
     setLoading(true);
     try {
-      const { error } = await client.auth.signInWithPassword({
+      const { data, error } = await client.auth.signInWithPassword({
         email: email,
         password: password,
       });
 
       if (error) {
         Alert.alert("Erro de login", error.message);
+      } else if (data.session) {
+        router.replace("/");
       }
     } catch (error) {
       Alert.alert("Erro", "Ocorreu um erro ao tentar fazer login.");
     } finally {
       setLoading(false);
-      router.replace("/");
     }
-  }, [email, password, loading]);
-
+  }, [email, password, loading, router]);
   return (
-    <View style={{ padding: 25 }}>
-      <Text variant="h6">Insira seus dados para logar no EduConnect.</Text>
+    <Surface style={{ ...styles.screen, alignItems: undefined }}>
+      <Text variant="headlineSmall" style={{ textAlign: "center" }}>
+        Insira seus dados para logar no EduConnect.
+      </Text>
       <TextInput
         label="Email"
         value={email}
@@ -45,14 +48,13 @@ const Page = () => {
         secureTextEntry
         onChangeText={(text) => setPassword(text)}
       />
-      <Button
-        title="Entrar"
-        onPress={signIn}
-        disabled={loading}
-        loading={loading}
-        style={{ marginTop: 20 }}
-      />
-    </View>
+      <Button mode="contained" onPress={signIn} disabled={loading}>
+        Entrar
+      </Button>
+      <Button mode="outlined" onPress={() => router.push("/(auth)/register")} disabled={loading}>
+        Registrar (debug)
+      </Button>
+    </Surface>
   );
 };
 
