@@ -26,6 +26,13 @@ const Layout = () => {
           tabBarIcon: () => <Icon source="bookshelf" size={24} />,
         }}
       />
+      <Tabs.Screen
+        name="notifications"
+        options={{
+          title: "Notificações",
+          tabBarIcon: () => <Icon source="bell" size={24} />,
+        }}
+      />
     </Tabs>
   );
 };
