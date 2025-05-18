@@ -1,0 +1,199 @@
+@ -0,0 +1,198 @@
+import { useAuth } from "../lib/components/Auth"; 
+import { styles as globalStyles } from "../lib/styles"; 
+import Themes from "../lib/styles/themes"; 
+import { client } from "../lib/utils/client"; 
+import { Tables } from "../lib/utils/client.types"; 
+import { PostgrestError } from "@supabase/supabase-js";
+import { useRouter, useFocusEffect } from "expo-router"; 
+import React, { useCallback, useState } from "react";
+import {
+  ActivityIndicator,
+  Avatar,
+  Button,
+  Divider,
+  Surface,
+  Text,
+} from "react-native-paper";
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  useColorScheme,
+} from "react-native";
+
+const TrocaAlunoScreen = () => {
+  const colorScheme = useColorScheme();
+  const theme = Themes[colorScheme!].default;
+  const { session } = useAuth();
+  const router = useRouter(); 
+
+  const [alunos, setAlunos] = useState<Tables<"alunos">[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [alunoSelecionado, setAlunoSelecionado] = useState<string | null>(null);
+
+  const fetchAlunos = useCallback(async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await client.from("alunos").select("*");
+
+      if (error) throw error;
+      setAlunos(data || []);
+    } catch (e) {
+      const err = e as PostgrestError;
+      setError(err.message);
+      console.error("Aluno não encontrado", err);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      fetchAlunos();
+    }, [fetchAlunos])
+  );
+
+  const handleTrocarAluno = () => {
+    if (!alunoSelecionado) {
+      alert("Selecione um aluno.");
+      return;
+    }
+
+    router.push(`/aluno/${alunoSelecionado}`);
+  };
+
+  const handleCadastrarNovoAluno = () => {
+    router.push("/cadastrar-aluno");
+  };
+
+  const getInitials = (nome: string) => {
+    return nome
+      .split(" ")
+      .slice(0, 2)
+      .map((n) => n[0]?.toUpperCase())
+      .join("");
+  };
+
+  if (loading) {
+    return (
+      <Surface style={globalStyles.screen}>
+        <ActivityIndicator />
+      </Surface>
+    );
+  }
+
+  if (error) {
+    return (
+      <Surface style={globalStyles.screen}>
+        <Text>Erro: {error}</Text>
+      </Surface>
+    );
+  }
+
+  return (
+    <Surface style={globalStyles.screen}>
+      <View style={styles.container}>
+        <Text variant="headlineSmall" style={styles.title}>
+          Trocar Aluno
+        </Text>
+        <Text style={styles.description}>
+          Selecione o aluno que deseja acessar a conta.
+        </Text>
+
+        <FlatList
+          data={alunos}
+          keyExtractor={(item) => item.id}
+          style={styles.lista}
+          contentContainerStyle={{ paddingBottom: 16 }}
+          renderItem={({ item }) => (
+            <>
+              <TouchableOpacity onPress={() => setAlunoSelecionado(item.id)}>
+                <Surface
+                  mode="flat"
+                  style={[
+                    styles.card,
+                    alunoSelecionado === item.id && styles.cardSelecionado,
+                    { borderColor: theme.colors.outline },
+                  ]}
+                >
+                  <View style={styles.row}>
+                    <Avatar.Text label={getInitials(item.nome)} size={48} />
+                    <Text style={styles.nome}>{item.nome}</Text>
+                    {alunoSelecionado === item.id && (
+                      <Text style={styles.check}>✅</Text>
+                    )}
+                  </View>
+                </Surface>
+              </TouchableOpacity>
+              <Divider style={styles.divider} />
+            </>
+          )}
+        />
+
+        <Button
+          mode="contained"
+          onPress={handleTrocarAluno}
+          style={styles.botaoPrincipal}
+        >
+          Confirmar
+        </Button>
+        <Button mode="text" onPress={handleCadastrarNovoAluno}>
+          Cadastrar novo aluno
+        </Button>
+      </View>
+    </Surface>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    padding: 16,
+    alignItems: "center",
+  },
+  title: {
+    marginBottom: 8,
+    textAlign: "center",
+  },
+  description: {
+    marginBottom: 24,
+    textAlign: "center",
+    color: "gray",
+  },
+  lista: {
+    width: "100%",
+  },
+  card: {
+    padding: 16,
+    borderRadius: 8,
+    marginVertical: 4,
+    borderWidth: 1,
+  },
+  cardSelecionado: {
+    backgroundColor: "#d0ebff",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  nome: {
+    marginLeft: 16,
+    fontSize: 16,
+  },
+  check: {
+    marginLeft: "auto",
+    fontWeight: "bold",
+  },
+  botaoPrincipal: {
+    marginTop: 24,
+    width: "100%",
+  },
+  divider: {
+    marginVertical: 2,
+  },
+});
+
+export default TrocaAlunoScreen;
