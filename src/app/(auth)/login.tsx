@@ -5,6 +5,8 @@ import { useCallback, useState } from "react";
 import { Alert } from "react-native";
 import { Button, Surface, Text, TextInput } from "react-native-paper";
 
+
+
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -54,6 +56,10 @@ const Page = () => {
       <Button mode="outlined" onPress={() => router.push("/(auth)/register")} disabled={loading}>
         Registrar (debug)
       </Button>
+      <Button mode="outlined" onPress={() => router.push("/notas")} disabled={loading}>
+        Ir para Notas (debug)
+      </Button>
+
     </Surface>
   );
 };
