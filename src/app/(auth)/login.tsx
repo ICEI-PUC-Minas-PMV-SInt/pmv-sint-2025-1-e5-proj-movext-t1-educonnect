@@ -50,10 +50,23 @@ const Page = () => {
         secureTextEntry
         onChangeText={(text) => setPassword(text)}
       />
+      <Text
+        onPress={() => router.push("/(auth)/reset-password")}
+        style={{
+          color: "#2962FF",
+          textAlign: "right",
+          marginBottom: 8,
+          fontSize: 14,
+        }}
+      >Esquecio minha senha</Text>
       <Button mode="contained" onPress={signIn} disabled={loading}>
         Entrar
       </Button>
-      <Button mode="outlined" onPress={() => router.push("/(auth)/register")} disabled={loading}>
+      <Button
+        mode="outlined"
+        onPress={() => router.push("/(auth)/register")}
+        disabled={loading}
+      >
         Registrar (debug)
       </Button>
       <Button mode="outlined" onPress={() => router.push("/notas")} disabled={loading}>

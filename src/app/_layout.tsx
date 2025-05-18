@@ -43,8 +43,10 @@ const App = () => {
   });
 
   useEffect(() => {
-    if (!isLoading && (!session || !session.user)) {
-      router.replace("/(auth)/login");
+    if (!isLoading && !session?.user) {
+      router.replace("/onboarding/initial");
+    } else if (!isLoading && session?.user) {
+      router.replace("/(areas)");
     }
   }, [session, isLoading]);
 
@@ -61,6 +63,7 @@ const App = () => {
           <Stack
             screenOptions={{
               animation: "flip",
+              headerShown: false,
               header: (props) => (
                 <StackHeader navProps={props} children={undefined} />
               ),
