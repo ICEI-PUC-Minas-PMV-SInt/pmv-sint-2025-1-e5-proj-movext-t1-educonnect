@@ -2,18 +2,19 @@ import { useAuth } from "@/lib/components/Auth";
 import { styles } from "@/lib/styles";
 import Themes from "@/lib/styles/themes";
 import { client } from "@/lib/utils/client";
+import { Tables } from "@/lib/utils/client.types";
 import { router } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, useColorScheme, View } from "react-native";
 import {
-    Avatar,
-    Button,
-    Dialog,
-    Divider,
-    List,
-    Portal,
-    Surface,
-    Text,
+  Avatar,
+  Button,
+  Dialog,
+  Divider,
+  List,
+  Portal,
+  Surface,
+  Text,
 } from "react-native-paper";
 
 const Page = () => {
@@ -54,6 +55,25 @@ const Page = () => {
 };
 
 const Sections = () => {
+  const { session } = useAuth();
+  const [responsible, setResponsible] = useState<Tables<"escola_usuarios">[]>(
+    []
+  );
+
+  useEffect(() => {
+    async function fetchUserType() {
+      if (!session?.user.id) return;
+
+      const { data } = await client
+        .from("escola_usuarios")
+        .select("*")
+        .eq("usuario", session.user.id);
+
+      setResponsible(data!);
+    }
+
+    fetchUserType();
+  }, [session?.user.id]);
   return (
     <>
       <List.Item
@@ -62,6 +82,14 @@ const Sections = () => {
         left={(props) => <List.Icon {...props} icon="account" />}
         onPress={() => console.log("aaa")}
       />
+      {responsible.length > 0 && (
+        <List.Item
+          title="Outras contas"
+          description="Estudantes em sua responsabilidade"
+          left={(props) => <List.Icon {...props} icon="account-box-multiple" />}
+          onPress={() => router.navigate("/(profile)/other-accounts")}
+        />
+      )}
       <List.Item
         title="Escolas"
         description="Instituições a qual você está associado"

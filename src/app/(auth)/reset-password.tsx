@@ -1,6 +1,6 @@
 import CustomButton from "@/components/Button/Button";
 import { styles } from "@/lib/styles";
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Alert } from "react-native";
 import { Surface, Text, TextInput } from "react-native-paper";
 
@@ -16,8 +16,7 @@ const Page = () => {
       return;
     }
 
-   console.log("Reset de senha", email);
- 
+    console.log("Reset de senha", email);
   }, [email, loading]);
 
   return (
@@ -57,4 +56,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Page;

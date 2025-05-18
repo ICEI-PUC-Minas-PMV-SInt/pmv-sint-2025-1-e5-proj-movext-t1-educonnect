@@ -12,6 +12,7 @@ const Layout = () => {
       }}
     >
       <Stack.Screen name="index" options={{ title: "Perfil" }} />
+      <Stack.Screen name="other-accounts" options={{ title: "Outras contas" }} />
     </Stack>
   );
 };

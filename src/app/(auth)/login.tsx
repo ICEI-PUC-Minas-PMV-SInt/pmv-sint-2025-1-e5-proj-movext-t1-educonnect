@@ -58,7 +58,7 @@ const Page = () => {
           marginBottom: 8,
           fontSize: 14,
         }}
-      >Esquecio minha senha</Text>
+      >Esqueci minha senha</Text>
       <Button mode="contained" onPress={signIn} disabled={loading}>
         Entrar
       </Button>
