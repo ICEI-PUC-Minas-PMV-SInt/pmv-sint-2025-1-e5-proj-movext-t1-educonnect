@@ -41,7 +41,7 @@ const Page = () => {
     <Surface style={{ ...styles.screen, alignItems: undefined }}>
 
       <Title text="Acessar Conta" />
-      <Subtitle  marginBottom={24} marginTop={16}>Informe seu e-mail e senha para acessar sua conta e acompanhar as informações escolares.</Subtitle>
+      <Subtitle  marginBottom={24} marginTop={16}>Informe seu e-mail e senha para acessar sua conta e acompanhar suas informações.</Subtitle>
 
       <TextInput
         label="Email"

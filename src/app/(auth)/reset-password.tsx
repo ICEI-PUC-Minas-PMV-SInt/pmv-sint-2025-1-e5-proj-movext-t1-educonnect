@@ -42,8 +42,13 @@ const Page = () => {
         keyboardType="email-address"
         autoCapitalize="none"
         autoCorrect={false}
+        mode="flat"
+        underlineColor="#2962FF"
+        activeUnderlineColor="#2962FF"
+        textColor="#22282399"
         style={{
           marginVertical: 40,
+          backgroundColor: "#2962FF0d",
         }}
       />
 

@@ -48,7 +48,7 @@ const StepScreen = () => {
 
   const handleNext = () => {
     if (currentStep === steps.length - 1) {
-      router.replace("/(auth)/login");
+      router.replace("/(auth)/userTypeSelect" as any);
     } else {
       animateStepChange(currentStep + 1, 1);
     }
@@ -61,7 +61,7 @@ const StepScreen = () => {
   };
 
    const handleSkip = () => {
-    router.replace("/(auth)/login");
+    router.replace("/(auth)/userTypeSelect" as any);
   };
 
   return (
