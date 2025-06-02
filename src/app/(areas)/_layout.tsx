@@ -10,29 +10,38 @@ const Layout = () => {
       screenOptions={{
         header: (props) => <TabsHeader navProps={props} children={undefined} />,
         headerShown: false,
+         tabBarShowLabel: true,
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: "Início",
-          tabBarIcon: () => <Icon source="home" size={24} />,
+          tabBarIcon: ({color}) => <Icon source="home-outline" size={24} color={color} />,
+        }}
+      />
+       <Tabs.Screen
+        name="calendar"
+        options={{
+          title: "Calendário",
+          tabBarIcon: ({color}) => <Icon source="calendar-range-outline" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="courses"
         options={{
           title: "Matérias",
-          tabBarIcon: () => <Icon source="bookshelf" size={24} />,
+          tabBarIcon: ({color}) => <Icon source="book-open-outline" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="notifications"
         options={{
           title: "Notificações",
-          tabBarIcon: () => <Icon source="bell" size={24} />,
+          tabBarIcon: ({color}) => <Icon source="bell-outline" size={24} color={color} />,
         }}
       />
+     
     </Tabs>
   );
 };

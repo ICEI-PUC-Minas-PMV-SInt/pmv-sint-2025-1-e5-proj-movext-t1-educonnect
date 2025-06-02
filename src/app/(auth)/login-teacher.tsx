@@ -1,6 +1,6 @@
-import CustomButton from "@/components/Button/Button";
-import Subtitle from "@/components/Subtitle/Subtitle";
-import Title from "@/components/Title/Title";
+import CustomButton from "@/lib/components/Button/Button";
+import Subtitle from "@/lib/components/Subtitle/Subtitle";
+import Title from "@/lib/components/Title/Title";
 import { styles } from "@/lib/styles";
 import { client } from "@/lib/utils/client";
 import { useRouter } from "expo-router";

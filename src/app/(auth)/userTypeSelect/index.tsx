@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import styles from "./styles";
-import CustomButton from "../../../components/Button/Button";
+import CustomButton from "../../../lib/components/Button/Button";
 import { Icon } from "react-native-paper";
-import Title from "@/components/Title/Title";
-import Subtitle from "@/components/Subtitle/Subtitle";
+import Title from "@/lib/components/Title/Title";
+import Subtitle from "@/lib/components/Subtitle/Subtitle";
 
 const UserTypeSelect = () => {
   const [selectedType, setSelectedType] = useState<"responsavel" | "professor">("responsavel");

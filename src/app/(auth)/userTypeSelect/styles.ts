@@ -36,7 +36,6 @@ export default StyleSheet.create({
     width: 'auto',
     height: 'auto',
     borderRadius: 4,
-    backgroundColor: "#2228231A",
     padding: 4,
   },
   selectedIconBox: {

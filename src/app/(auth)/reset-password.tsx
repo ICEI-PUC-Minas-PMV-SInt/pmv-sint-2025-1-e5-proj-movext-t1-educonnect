@@ -1,4 +1,4 @@
-import CustomButton from "@/components/Button/Button";
+import CustomButton from "@/lib/components/Button/Button";
 import { styles } from "@/lib/styles";
 import { useCallback, useState } from "react";
 import { Alert } from "react-native";

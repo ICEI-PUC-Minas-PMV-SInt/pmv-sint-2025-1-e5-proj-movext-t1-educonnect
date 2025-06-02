@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { View, Text, Image, Animated, Dimensions, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
-import CustomButton from "../../components/Button/Button";
+import CustomButton from "../../lib/components/Button/Button";
 import styles from "./steps.styles";
 
 const { width } = Dimensions.get("window");
