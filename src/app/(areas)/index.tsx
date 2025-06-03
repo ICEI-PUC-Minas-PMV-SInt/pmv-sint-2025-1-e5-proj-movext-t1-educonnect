@@ -22,10 +22,47 @@ type SubjectName =
   | "L. Portuguesa";
 
 type SubjectData = { icon: string; color: string };
+type EventType = "Prova" | "Reunião" | "Passeio";
+
+type Event = {
+  type: EventType;
+  title: string;
+  day: string;
+  month: string;
+  start: string;
+  end: string;
+};
+
+const mockEvents: Event[] = [
+  {
+    type: "Prova",
+    title: "Matemática",
+    day: "05",
+    month: "JUN",
+    start: "08:00",
+    end: "10:00",
+  },
+  {
+    type: "Passeio",
+    title: "Visita ao Museu",
+    day: "06",
+    month: "JUN",
+    start: "13:00",
+    end: "17:00",
+  },
+  {
+    type: "Reunião",
+    title: "Reunião de Pais",
+    day: "07",
+    month: "JUN",
+    start: "18:00",
+    end: "19:00",
+  },
+];
 
 const getSubjectDataByName = (name: string): SubjectData => {
   const map: Record<SubjectName, SubjectData> = {
-    "Matemática": { icon: "function-variant", color: "#FF9800" },
+    "Matemática": { icon: "calculator", color: "#FF9800" },
     "Física": { icon: "atom", color: "#2962FF" },
     "Química": { icon: "test-tube", color: "#00BCD4" },
     "Biologia": { icon: "leaf", color: "#4CAF50" },
@@ -42,7 +79,7 @@ const getSubjectDataByName = (name: string): SubjectData => {
   if (name in map) {
     return map[name as SubjectName];
   }
-  return { icon: "book", color: "#999" }; 
+  return { icon: "book", color: "#999" };
 };
 
 
@@ -181,41 +218,113 @@ const Areas = () => {
 
               return (
                 <TouchableOpacity
-      key={index}
-      onPress={() => console.log(`Clicou em ${subject.name}`)}
-      activeOpacity={0.8}
-      style={{
-        width: 120,
-        height: 120,
-        backgroundColor: "#ffffff",
-        borderRadius: 8,
-        justifyContent: "center",
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.05,
-        shadowRadius: 10,
-        elevation: 2,
-      }}
-    >
-      <View
-        style={{
-          backgroundColor: color + "1A", 
-          padding: 12,
-          borderRadius: 8,
-          marginBottom: 8,
-        }}
-      >
-        <Icon source={icon} size={28} color={color} />
-      </View>
-      <Text style={{ fontSize: 14, textAlign: "center" }}>
-        {subject.name}
-      </Text>
-    </TouchableOpacity>
+                  key={index}
+                  onPress={() => console.log(`Clicou em ${subject.name}`)}
+                  activeOpacity={0.8}
+                  style={{
+                    width: 120,
+                    height: 120,
+                    backgroundColor: "#ffffff",
+                    borderRadius: 8,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    shadowColor: "#000",
+                    shadowOffset: { width: 0, height: 5 },
+                    shadowOpacity: 0.05,
+                    shadowRadius: 10,
+                    elevation: 2,
+                  }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: color + "1A",
+                      padding: 12,
+                      borderRadius: 8,
+                      marginBottom: 8,
+                    }}
+                  >
+                    <Icon source={icon} size={28} color={color} />
+                  </View>
+                  <Text style={{ fontSize: 14, textAlign: "center" }}>
+                    {subject.name}
+                  </Text>
+                </TouchableOpacity>
               );
             })}
           </ScrollView>
         </View>
+        <View style={{ marginTop: 32 }}>
+          <Text style={{ fontSize: 20, fontWeight: "600", marginBottom: 12 }}>
+            Agenda
+          </Text>
+
+          {mockEvents.map((event, index) => {
+            const colorMap: Record<EventType, string> = {
+              Prova: "#FF9800",
+              Reunião: "#7E57C2",
+              Passeio: "#2962FF",
+            };
+
+            return (
+              <View
+                key={index}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  backgroundColor: "#fff",
+                  borderRadius: 8,
+                  padding: 16,
+                  marginBottom: 12,
+                  shadowColor: "#000",
+                  shadowOffset: { width: 0, height: 4 },
+                  shadowOpacity: 0.05,
+                  shadowRadius: 6,
+                  elevation: 2,
+                }}
+              >
+
+                <View
+                  style={{
+                    backgroundColor: colorMap[event.type],
+                    borderRadius: 8,
+                    width: 48,
+                    height: 48,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginRight: 16,
+                  }}
+                >
+                  <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
+                    {event.day}
+                  </Text>
+                  <Text style={{ color: "#fff", fontSize: 12 }}>{event.month}</Text>
+                </View>
+
+                <View style={{ flex: 1 }}>
+                  <Text
+                    style={{
+                      color: colorMap[event.type],
+                      fontWeight: "bold",
+                      // marginBottom: 4,
+                    }}
+                  >
+                    {event.type}
+                  </Text>
+                  <Text style={{ fontSize: 16, fontWeight: "500" }}>{event.title}</Text>
+                  <View style={{ flexDirection: "row", alignItems: "center", marginTop: 2 }}>
+                    <Icon source="clock-outline" size={16} color="#666" />
+                    <Text style={{ marginLeft: 6, color: "#666" }}>
+                      {event.start} - {event.end}
+                    </Text>
+                  </View>
+                </View>
+
+                <Icon source="dots-vertical" size={20} color="#999" />
+              </View>
+            );
+          })}
+        </View>
+
 
 
 
