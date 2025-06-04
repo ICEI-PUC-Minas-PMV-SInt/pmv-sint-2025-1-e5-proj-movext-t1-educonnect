@@ -1,5 +1,6 @@
 import CustomButton from "@/lib/components/Button/Button";
 import { styles } from "@/lib/styles";
+import { router } from "expo-router";
 import { useCallback, useState } from "react";
 import { Alert } from "react-native";
 import { Surface, Text, TextInput } from "react-native-paper";
@@ -55,6 +56,12 @@ const Page = () => {
       <CustomButton
         text="Recuperar Senha"
         onPress={resetPassword}
+        disabled={loading}
+      />
+      <CustomButton
+        text="Voltar"
+        mode="outlined"
+        onPress={() => router.replace("/(auth)/login")}
         disabled={loading}
       />
     </Surface>
