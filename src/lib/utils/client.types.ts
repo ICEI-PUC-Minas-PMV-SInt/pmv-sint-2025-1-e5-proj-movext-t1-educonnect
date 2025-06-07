@@ -1,6 +1,47 @@
 export type Database = {
   public: {
     Tables: {
+      calendario: {
+        Row: {
+          categoria: string;
+          data: string;
+          horario_ate: string | null;
+          horario_de: string | null;
+          id: string;
+          lido: boolean;
+          nome: string;
+          usuario: string;
+        };
+        Insert: {
+          categoria: string;
+          data: string;
+          horario_ate?: string | null;
+          horario_de?: string | null;
+          id?: string;
+          lido?: boolean;
+          nome: string;
+          usuario: string;
+        };
+        Update: {
+          categoria?: string;
+          data?: string;
+          horario_ate?: string | null;
+          horario_de?: string | null;
+          id?: string;
+          lido?: boolean;
+          nome?: string;
+          usuario?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "calendario_usuario_fkey";
+            columns: ["usuario"];
+            isOneToOne: false;
+            referencedRelation: "escola_usuarios";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
       escola: {
         Row: {
           ativa: boolean;
@@ -134,21 +175,31 @@ export type Database = {
       };
       materia: {
         Row: {
+          escola: string;
           id: string;
           nome: string;
           professor: string | null;
         };
         Insert: {
+          escola: string;
           id?: string;
           nome: string;
           professor?: string | null;
         };
         Update: {
+          escola?: string;
           id?: string;
           nome?: string;
           professor?: string | null;
         };
         Relationships: [
+          {
+            foreignKeyName: "materia_escola_fkey";
+            columns: ["escola"];
+            isOneToOne: false;
+            referencedRelation: "escola";
+            referencedColumns: ["id"];
+          },
           {
             foreignKeyName: "materia_professor_fkey";
             columns: ["professor"];

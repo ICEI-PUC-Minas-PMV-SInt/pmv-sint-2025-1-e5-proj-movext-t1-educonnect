@@ -17,3 +17,5 @@ export type SchoolUser = {
   entrada: Date;
   saida?: Date;
 };
+
+export type EventType = "Prova" | "Reunião" | "Passeio";

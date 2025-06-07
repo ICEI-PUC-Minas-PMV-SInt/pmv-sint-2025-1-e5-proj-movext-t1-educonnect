@@ -1,35 +1,73 @@
+import { useAuth } from "@/lib/components/Auth";
 import { styles } from "@/lib/styles";
 import Themes from "@/lib/styles/themes";
-import { useColorScheme, FlatList, Image, View } from "react-native";
-import { Surface, Text } from "react-native-paper";
-
-// Dados de exemplo para notificações
-const mockNotifications: {
-  id: string;
-  title: string;
-  message: string;
-  image: string;
-  time: string;
-}[] = [
-// Usar esse teste para ver se a lista de notificações está funcionando
-  {
-    id: "1", 
-    title: "Nova atividade disponível",
-    message: "Uma nova atividade foi adicionada na matéria de Matemática",
-    image: "https://static.vecteezy.com/ti/vetor-gratis/p1/7545840-matematica-doodle-ilustracao-vetor.jpg",
-    time: "2 horas atrás",
-  },
-  {
-    id: "2", 
-    title: "Nova atividade disponível",
-    message: "Uma nova atividade foi adicionada na matéria de Matemática",
-    image: "https://static.vecteezy.com/ti/vetor-gratis/p1/7545840-matematica-doodle-ilustracao-vetor.jpg",
-    time: "2 horas atrás",
-  }
-];
+import { EventType } from "@/lib/types/school";
+import { client } from "@/lib/utils/client";
+import { Tables } from "@/lib/utils/client.types";
+import { PostgrestError } from "@supabase/supabase-js";
+import { useEffect, useState } from "react";
+import { FlatList, useColorScheme, View } from "react-native";
+import { ActivityIndicator, Icon, Surface, Text } from "react-native-paper";
 
 const Page = () => {
+  const { session } = useAuth();
   const colorScheme = useColorScheme();
+  const [loading, setLoading] = useState(true);
+  const [calendar, setCalendar] = useState<Tables<"calendario">[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchCalendar() {
+      if (!session?.user.id) return;
+
+      try {
+        setLoading(true);
+
+        const { data, error } = await client
+          .from("calendario")
+          .select("*, escola_usuarios!inner(*)")
+          .order("data")
+          .eq("escola_usuarios.usuario", session.user.id);
+
+        if (error) {
+          throw error;
+        }
+
+        setCalendar(data || []);
+      } catch (e) {
+        const err = e as PostgrestError;
+
+        console.error("Erro ao buscar eventos em calendário:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchCalendar();
+  }, [session?.user.id]);
+
+  if (loading) {
+    return (
+      <Surface style={styles.screen}>
+        <ActivityIndicator />
+      </Surface>
+    );
+  }
+
+  if (error) {
+    return (
+      <Surface style={styles.screen}>
+        <Text>Error: {error}</Text>
+      </Surface>
+    );
+  }
+
+  const colorMap: Record<EventType | string, string> = {
+    Prova: "#FF9800",
+    Reunião: "#7E57C2",
+    Passeio: "#2962FF",
+  };
 
   return (
     <Surface
@@ -48,57 +86,88 @@ const Page = () => {
           flex: 1,
         }}
       >
-        {mockNotifications.length === 0 ? (
-          <View style={{ alignItems: "center", justifyContent: "center", flex: 1, padding: 20 }}>
-            <Text variant="titleMedium" style={{ textAlign: "center" }}>
-              Nenhuma notificação disponível
-            </Text>
-            <Text variant="bodyMedium" style={{ textAlign: "center", marginTop: 8 }}>
-              Quando você tiver novas notificações, elas aparecerão aqui.
-            </Text>
-          </View>
-        ) : (
+        {calendar.length > 0 ? (
           <FlatList
-            data={mockNotifications}
-            renderItem={({ item }) => (
-              <View
-                style={{
-                  flexDirection: "row",
-                  padding: 12,
-                  backgroundColor: Themes[colorScheme!].default.colors.surface,
-                  borderRadius: 12,
-                  marginBottom: 8,
-                }}
-              >
-                <Image
-                  source={{ uri: item.image }}
+            data={calendar}
+            renderItem={({ item }) => {
+              const data = new Date(item.data);
+
+              return (
+                <View
                   style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 25,
-                    marginRight: 12,
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginBottom: 18,
                   }}
-                />
-                <View style={{ flex: 1 }}>
-                  <Text variant="titleMedium">{item.title}</Text>
-                  <Text variant="bodyMedium" style={{ marginTop: 4 }}>
-                    {item.message}
-                  </Text>
-                  <Text
-                    variant="labelSmall"
-                    style={{ marginTop: 4, color: "#545454" }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: colorMap[item.categoria],
+                      borderRadius: 8,
+                      width: 48,
+                      height: 48,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginRight: 16,
+                    }}
                   >
-                    {item.time}
-                  </Text>
+                    <Text
+                      style={{
+                        color: "#fff",
+                        fontWeight: "bold",
+                        fontSize: 16,
+                      }}
+                    >
+                      {data.getDay()}
+                    </Text>
+                    <Text style={{ color: "#fff", fontSize: 12 }}>
+                      {data
+                        .toLocaleString("pt-BR", { month: "short" })
+                        .toUpperCase()}
+                    </Text>
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    <Text
+                      style={{
+                        color: colorMap[item.categoria],
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {item.categoria}
+                    </Text>
+                    <Text style={{ fontSize: 16, fontWeight: "500" }}>
+                      {item.nome}
+                    </Text>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginTop: 2,
+                      }}
+                    >
+                      {item.horario_de && (
+                        <>
+                          <Icon source="clock-outline" size={16} color="#666" />
+                          <Text style={{ marginLeft: 6, color: "#666" }}>
+                            {item.horario_de.slice(0, 5)}
+                            {item.horario_ate && (
+                              <> - {item.horario_ate.slice(0, 5)}</>
+                            )}
+                          </Text>
+                        </>
+                      )}
+                    </View>
+                  </View>
                 </View>
-              </View>
-            )}
-            keyExtractor={(item) => item.id}
+              );
+            }}
           />
+        ) : (
+          <Text style={{ margin: "auto" }}>Não há eventos no calendário</Text>
         )}
       </View>
     </Surface>
   );
 };
 
-export default Page; 
+export default Page;
