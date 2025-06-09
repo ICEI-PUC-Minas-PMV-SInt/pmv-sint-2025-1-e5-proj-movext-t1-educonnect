@@ -28,5 +28,15 @@ A estrutura foi pensada para garantir escalabilidade, boa performance e uma expe
  <img src="https://github.com/user-attachments/assets/a8641732-ec20-404d-bb0e-959cc7fc4606" width="200"/>
 </div>
 
+<h3>Seleção de Perfil</h3>
+<p>Tela intermediária onde o usuário escolhe entre:</p>
+<ul>
+  <li>Responsável</li>
+  <li>Professor</li>
+</ul>
+<br/>
+<div style="display: flex; gap: 24px;">
+  <img src="https://github.com/user-attachments/assets/01f5ca13-c1e9-4d19-9a18-bd55cb301014" width="200"/>
+</div>
 
 
