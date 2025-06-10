@@ -39,4 +39,27 @@ A estrutura foi pensada para garantir escalabilidade, boa performance e uma expe
   <img src="https://github.com/user-attachments/assets/01f5ca13-c1e9-4d19-9a18-bd55cb301014" width="200"/>
 </div>
 
+<h3>Tela de Login</h3>
+<ul>
+  <li>Autenticação por e-mail e senha.</li>
+  <li>Validações de entrada e mensagens de erro.</li>
+  <li>Opção de troca de perfil</li>
+</ul>
+<br/>
+<div style="display: flex; gap: 24px;">
+  <img src="https://github.com/user-attachments/assets/d9ec5d47-d562-4de9-9a90-50698161036a" width="200"/>
+</div>
+
+<h3>Recuperar Acesso</h3>
+<ul>
+  <li>Permite redefinir senha via link enviado por e-mail.</li>
+</ul>
+<br/>
+<div style="display: flex; gap: 24px;">
+  <img src="https://github.com/user-attachments/assets/a031ccae-0eef-472b-becc-84a2defbdbd0" width="200"/>
+</div>
+
+
+
+
 
