@@ -56,10 +56,55 @@ A estrutura foi pensada para garantir escalabilidade, boa performance e uma expe
 </ul>
 <br/>
 <div style="display: flex; gap: 24px;">
-  <img src="https://github.com/user-attachments/assets/a031ccae-0eef-472b-becc-84a2defbdbd0" width="200"/>
+  <img src="https://github.com/user-attachments/assets/b5e8d770-fc12-46b4-9998-d50e591b32eb" width="200"/>
 </div>
 
+<h3>Tela inicial após Login</h3>
+<p>A Home do EduConnect foi projetada para oferecer uma visão geral rápida e funcional do desempenho acadêmico. Ela centraliza informações importantes para o usuário (no exemplo, um responsável), apresentando:</p>
+<ul>
+  <li>Saudação personalizada: Exibe o nome do usuário e uma mensagem de boas-vindas dinâmica (ex: "Boa tarde, Usuário").</li>
+  <li>Botão para acesso as informações do usuário</li>
+  <li>Banner ilustrativo: Mostra um personagem acolhedor e uma mensagem motivacional, incentivando o acompanhamento escolar.</li>
+  <li>Informações do aluno: Nome, série e RA (Registro Acadêmico) são exibidos de forma clara.</li>
+  <li>Matérias: Cards com ícones e cores representando cada disciplina. O usuário pode clicar para ver mais detalhes.</li>
+  <li>Agenda: Destaques da semana como provas, trabalhos ou compromissos escolares. Cada item apresenta: Data, Tipo de evento (ex: Prova, Reunião ou Passeio), Descrição e horário</li>
+</ul>
+<p>Na parte inferior, há uma barra de navegação com quatro seções principais:
+<ul>
+  <li>Início: Tela atual.</li>
+  <li>Calendário: Exibe todos os eventos do aluno.</li>
+  <li>Matérias: Lista completa das disciplinas com conteúdos, avaliações e progresso.</li>
+  <li>Notificações: Central de avisos da escola, mensagens de professores e lembretes.</li>
+</ul>
+</p>
+<br/>
+<div style="display: flex; gap: 24px;">
+  <img src="https://github.com/user-attachments/assets/c8e291d2-b959-46fb-bd82-0ad4eb6e120c" width="200"/>
+</div>
 
+<h3>Tela de Perfil</h3>
+<p>A Tela de Perfil concentra as principais configurações e informações da conta do usuário, permitindo fácil gerenciamento de dados pessoais e acesso rápido a recursos administrativos. Essa tela é acessada através do botão azul na parte superior da Home.</p>
+
+<h4>Informações do Usuário</h4>
+<ul>
+  <li>Nome</li>
+  <li>Foto</li>
+  <li>RA</li>
+</ul>
+
+<h4>Seções disponíveis</h4>
+<ul>
+  <li><strong>Conta:</strong> Exibe ou permite editar dados como nome, CPF, e-mail e senha.</li>
+  <li><strong>Outras contas:</strong> Gerencia os estudantes sob responsabilidade do usuário (útil especialmente para responsáveis com mais de um filho).</li>
+  <li><strong>Escolas:</strong> Lista as instituições às quais o usuário está vinculado.</li>
+  <li><strong>Aplicativo:</strong> Acesso a configurações gerais, como notificações, idioma, entre outros.</li>
+  <li><strong>Ajuda:</strong> Guias e perguntas frequentes para auxílio no uso da plataforma.</li>
+  <li><strong>Sair:</strong> Encerra a sessão atual com segurança, retornando à tela de login.</li>
+</ul>
+<br/>
+<div style="display: flex; gap: 24px;">
+  <img src="https://github.com/user-attachments/assets/bf0a707f-af74-46e5-84ac-982b6c2faed6" width="200"/>
+</div>
 
 
 
