@@ -5,7 +5,8 @@ import { EventType } from "@/lib/types/school";
 import { client } from "@/lib/utils/client";
 import { Tables } from "@/lib/utils/client.types";
 import { PostgrestError, Session, UserMetadata } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
+import { useFocusEffect } from "expo-router";
+import { useCallback, useState } from "react";
 import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import { ActivityIndicator, Icon, Surface, Text } from "react-native-paper";
 
@@ -235,34 +236,38 @@ const Calendar = ({ user }: { user: Session }) => {
   const [calendar, setCalendar] = useState<Tables<"calendario">[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function fetchCalendar() {
-      try {
-        setLoading(true);
+  useFocusEffect(
+    useCallback(() => {
+      async function fetchCalendar() {
+        try {
+          setLoading(true);
 
-        const { data, error } = await client
-          .from("calendario")
-          .select("*, escola_usuarios!inner(*)")
-          .order("data")
-          .eq("escola_usuarios.usuario", user.user.id);
+          const { data, error } = await client
+            .from("calendario")
+            .select("*, escola_usuarios!inner(*)")
+            .order("data")
+            .eq("escola_usuarios.usuario", user.user.id);
 
-        if (error) {
-          throw error;
+          if (error) {
+            throw error;
+          }
+
+          setCalendar(data || []);
+        } catch (e) {
+          const err = e as PostgrestError;
+
+          console.error("Erro ao buscar eventos em calendário:", err);
+          setError(err.message);
+        } finally {
+          setLoading(false);
         }
-
-        setCalendar(data || []);
-      } catch (e) {
-        const err = e as PostgrestError;
-
-        console.error("Erro ao buscar eventos em calendário:", err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
       }
-    }
 
-    fetchCalendar();
-  }, [user?.user.id]);
+      fetchCalendar();
+
+      return () => {};
+    }, [user?.user.id])
+  );
 
   if (loading) {
     return (

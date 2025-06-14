@@ -1,7 +1,7 @@
 import {
-    MD3DarkTheme,
-    MD3LightTheme,
-    configureFonts,
+  MD3DarkTheme,
+  MD3LightTheme,
+  configureFonts,
 } from "react-native-paper";
 
 import Colors from "@/lib/styles/colors";

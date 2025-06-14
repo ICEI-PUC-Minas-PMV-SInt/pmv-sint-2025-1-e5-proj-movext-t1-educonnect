@@ -8,6 +8,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  fab: {
+    position: "absolute",
+    bottom: 25,
+    right: 25,
+    zIndex: 10,
+  }
 });
 
 export { styles };

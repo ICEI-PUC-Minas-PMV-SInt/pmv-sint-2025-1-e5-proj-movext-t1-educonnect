@@ -74,8 +74,11 @@ const Layout = () => {
         ),
       }}
     >
-      <Stack.Screen name="[course]" options={{ title: "Matérias" }} />
       <Stack.Screen name="new-course" options={{ title: "Nova matéria" }} />
+      <Stack.Screen
+        name="new-event"
+        options={{ title: "Novo evento", animation: "slide_from_bottom" }}
+      />
     </Stack>
   );
 };

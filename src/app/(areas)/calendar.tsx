@@ -2,50 +2,73 @@ import { useAuth } from "@/lib/components/Auth";
 import { styles } from "@/lib/styles";
 import Themes from "@/lib/styles/themes";
 import { EventType } from "@/lib/types/school";
-import { client } from "@/lib/utils/client";
+import { client, UserTypes } from "@/lib/utils/client";
 import { Tables } from "@/lib/utils/client.types";
 import { PostgrestError } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback, useState } from "react";
 import { FlatList, useColorScheme, View } from "react-native";
-import { ActivityIndicator, Icon, Surface, Text } from "react-native-paper";
+import {
+  ActivityIndicator,
+  FAB,
+  Icon,
+  Surface,
+  Text,
+} from "react-native-paper";
 
 const Page = () => {
   const { session } = useAuth();
   const colorScheme = useColorScheme();
   const [loading, setLoading] = useState(true);
   const [calendar, setCalendar] = useState<Tables<"calendario">[]>([]);
+  const [managerType, setManagerType] = useState<number | null>();
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function fetchCalendar() {
-      if (!session?.user.id) return;
+  useFocusEffect(
+    useCallback(() => {
+      async function fetchCalendar() {
+        if (!session?.user.id) return;
 
-      try {
-        setLoading(true);
+        try {
+          setLoading(true);
 
-        const { data, error } = await client
-          .from("calendario")
-          .select("*, escola_usuarios!inner(*)")
-          .order("data")
-          .eq("escola_usuarios.usuario", session.user.id);
+          const { data, error } = await client
+            .from("calendario")
+            .select("*, escola_usuarios!inner(*)")
+            .order("data")
+            .eq("escola_usuarios.usuario", session.user.id);
 
-        if (error) {
-          throw error;
+          if (error) {
+            throw error;
+          }
+
+          setCalendar(data || []);
+
+          const { data: data2, error: error2 } = await client
+            .from("escola_usuarios")
+            .select("*, usuario!inner(*)")
+            .eq("usuario.id", session.user.id);
+
+          if (error2) {
+            throw error2;
+          }
+
+          setManagerType(data2[0]?.tipo || null);
+        } catch (e) {
+          const err = e as PostgrestError;
+
+          console.error("Erro ao buscar eventos em calendário:", err);
+          setError(err.message);
+        } finally {
+          setLoading(false);
         }
-
-        setCalendar(data || []);
-      } catch (e) {
-        const err = e as PostgrestError;
-
-        console.error("Erro ao buscar eventos em calendário:", err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
       }
-    }
 
-    fetchCalendar();
-  }, [session?.user.id]);
+      fetchCalendar();
+
+      return () => {};
+    }, [session?.user.id])
+  );
 
   if (loading) {
     return (
@@ -77,6 +100,14 @@ const Page = () => {
         justifyContent: undefined,
       }}
     >
+      {(managerType === UserTypes.Gerenciador ||
+        managerType === UserTypes.Professor) && (
+        <FAB
+          icon="plus"
+          style={styles.fab}
+          onPress={() => router.navigate("/(manage)/new-event")}
+        />
+      )}
       <View
         style={{
           backgroundColor: Themes[colorScheme!].default.colors.background,
