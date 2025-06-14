@@ -4,49 +4,14 @@ import { styles } from "@/lib/styles";
 import { EventType } from "@/lib/types/school";
 import { client } from "@/lib/utils/client";
 import { Tables } from "@/lib/utils/client.types";
+import { getSubjectDataByName } from "@/lib/utils/subjects";
 import { PostgrestError, Session, UserMetadata } from "@supabase/supabase-js";
 import { useFocusEffect } from "expo-router";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import { ActivityIndicator, Icon, Surface, Text } from "react-native-paper";
 
-type SubjectName =
-  | "Matemática"
-  | "Física"
-  | "Química"
-  | "Biologia"
-  | "História"
-  | "Geografia"
-  | "Filosofia"
-  | "Sociologia"
-  | "Ed. Física"
-  | "Inglês"
-  | "Artes"
-  | "L. Portuguesa";
 
-type SubjectData = { icon: string; color: string };
-
-const getSubjectDataByName = (name: string): SubjectData => {
-  const map: Record<SubjectName, SubjectData> = {
-    Matemática: { icon: "calculator", color: "#FF9800" },
-    Física: { icon: "atom", color: "#2962FF" },
-    Química: { icon: "test-tube", color: "#00BCD4" },
-    Biologia: { icon: "leaf", color: "#4CAF50" },
-    História: { icon: "book-clock", color: "#7E57C2" },
-    Geografia: { icon: "map", color: "#7E57C2" },
-    Filosofia: { icon: "lightbulb-on-outline", color: "#9E9E9E" },
-    Sociologia: { icon: "account-group-outline", color: "#8BC34A" },
-    "Ed. Física": { icon: "run-fast", color: "#00C853" },
-    Inglês: { icon: "translate", color: "#7096FE" },
-    Artes: { icon: "palette", color: "#FF4081" },
-    "L. Portuguesa": { icon: "book-open-page-variant", color: "#9C27B0" },
-  };
-
-  if (name in map) {
-    return map[name as SubjectName];
-  }
-  return { icon: "book", color: "#999" };
-};
 
 const Areas = () => {
   const { session } = useAuth();
@@ -163,71 +128,102 @@ const StudentDetails = ({ user }: { user?: UserMetadata }) => {
 };
 
 const Subjects = () => {
-  const subjects = [
-    { name: "Matemática" },
-    { name: "Física" },
-    { name: "Química" },
-    { name: "Biologia" },
-    { name: "História" },
-    { name: "Geografia" },
-    { name: "Filosofia" },
-    { name: "Sociologia" },
-    { name: "Ed. Física" },
-    { name: "Inglês" },
-    { name: "Artes" },
-    { name: "L. Portuguesa" },
-  ];
+  const [subjects, setSubjects] = useState<{ nome: string }[]>([]);
+  const [loading, setLoading] = useState(true);
+  const { session } = useAuth();
 
+
+  useEffect(() => {
+    async function fetchSubjects() {
+      if (!session?.user?.id) return;
+
+      try {
+        // setLoading(true);
+
+        const { data: escolas, error: escolaError } = await client
+          .from("escola")
+          .select("id, escola_usuarios!inner(usuario)")
+          .eq("escola_usuarios.usuario", session.user.id);
+
+        if (escolaError) throw escolaError;
+
+        const escolaId = escolas?.[0]?.id;
+        if (!escolaId) {
+          setSubjects([]);
+          return;
+        }
+
+        const { data: materias, error: materiaError } = await client
+          .from("materia")
+          .select("*")
+          .eq("escola", escolaId);
+
+        if (materiaError) throw materiaError;
+
+        setSubjects(materias || []);
+      } catch (e) {
+        const err = e as PostgrestError;
+        console.error("Erro ao buscar matérias:", err);
+        // setError(err.message);
+      } finally {
+        // setLoading(false);
+      }
+    }
+
+    fetchSubjects();
+
+  }, [session?.user?.id]);
   return (
-    <View style={{ marginTop: 24 }}>
-      <Text style={{ fontSize: 20, fontWeight: "600", marginBottom: 12 }}>
-        Matérias
-      </Text>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ gap: 16, paddingRight: 16 }}
-      >
-        {subjects.map((subject, index) => {
-          const { icon, color } = getSubjectDataByName(subject.name);
+    <>
+      {subjects.length > 0 && (
+        <View style={{ marginTop: 24 }}>
+          <Text style={{ fontSize: 20, fontWeight: "600", marginBottom: 12 }}>
+            Matérias
+          </Text>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ gap: 16, paddingRight: 16 }}
+          >
+            {subjects.map((subject, index) => {
+              const { icon, color } = getSubjectDataByName(subject.nome);
 
-          return (
-            <TouchableOpacity
-              key={index}
-              onPress={() => console.log(`Clicou em ${subject.name}`)}
-              activeOpacity={0.8}
-              style={{
-                width: 120,
-                height: 120,
-                backgroundColor: "#ffffff",
-                borderRadius: 8,
-                justifyContent: "center",
-                alignItems: "center",
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 5 },
-                shadowOpacity: 0.05,
-                shadowRadius: 10,
-                elevation: 2,
-              }}
-            >
-              <View
-                style={{
-                  backgroundColor: color + "1A",
-                  padding: 12,
-                  borderRadius: 8,
-                  marginBottom: 8,
-                }}
-              >
-                <Icon source={icon} size={28} color={color} />
-              </View>
-              <Text style={{ fontSize: 14, textAlign: "center" }}>
-                {subject.name}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
-    </View>
+              return (
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => console.log(`Clicou em ${subject.nome}`)}
+                  activeOpacity={0.8}
+                  style={{
+                    width: 120,
+                    height: 120,
+                    backgroundColor: "#ffffff",
+                    borderRadius: 8,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    shadowColor: "#000",
+                    shadowOpacity: 0.05,
+                  }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: color + "1A",
+                      padding: 12,
+                      borderRadius: 8,
+                      marginBottom: 8,
+                    }}
+                  >
+                    <Icon source={icon} size={28} color={color} />
+                  </View>
+                  <Text style={{ fontSize: 14, textAlign: "center" }}>
+                    {subject.nome}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+        </View>
+      )}
+    </>
   );
 };
 
@@ -265,7 +261,7 @@ const Calendar = ({ user }: { user: Session }) => {
 
       fetchCalendar();
 
-      return () => {};
+      return () => { };
     }, [user?.user.id])
   );
 

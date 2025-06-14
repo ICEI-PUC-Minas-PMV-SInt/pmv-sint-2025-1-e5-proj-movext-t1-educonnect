@@ -3,19 +3,21 @@ import { styles } from "@/lib/styles";
 import Themes from "@/lib/styles/themes";
 import { client, UserTypes } from "@/lib/utils/client";
 import { Tables } from "@/lib/utils/client.types";
+import { getSubjectDataByName } from "@/lib/utils/subjects";
 import { PostgrestError } from "@supabase/supabase-js";
 import { router, useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
-import { FlatList, useColorScheme, View } from "react-native";
+import { FlatList, TouchableOpacity, useColorScheme, View } from "react-native";
 import {
   ActivityIndicator,
   Button,
   Divider,
-  IconButton,
+  Icon,
   List,
   Surface,
   Text,
 } from "react-native-paper";
+
 
 const Page = () => {
   type School = Tables<"escola"> & {
@@ -96,7 +98,7 @@ const Page = () => {
           overflow: "hidden",
         }}
       >
-        <List.AccordionGroup>
+       
           <FlatList
             data={userSchools}
             renderItem={({ item }) => (
@@ -104,7 +106,7 @@ const Page = () => {
                 <List.Accordion
                   title={item.nome}
                   id={item.id}
-                  expanded={userSchools.length === 1 ? true : false}
+                  expanded={true}
                 >
                   <Surface
                     mode="flat"
@@ -133,7 +135,7 @@ const Page = () => {
             )}
             keyExtractor={(item) => item.id}
           />
-        </List.AccordionGroup>
+   
       </View>
     </Surface>
   );
@@ -141,7 +143,6 @@ const Page = () => {
 
 const Courses = ({
   schoolId,
-  colorScheme,
 }: {
   schoolId: string;
   colorScheme: "light" | "dark";
@@ -189,7 +190,7 @@ const Courses = ({
   }
 
   if (courses.length === 0) {
-    return <Text>Nenhuma matérias para esta escola.</Text>;
+    return <Text>Nenhuma matéria para esta escola.</Text>;
   }
 
   return (
@@ -198,29 +199,46 @@ const Courses = ({
         data={courses}
         numColumns={2}
         columnWrapperStyle={{ gap: 10, justifyContent: "center" }}
-        renderItem={({ item }) => (
-          <Surface
-            mode="flat"
-            style={{
-              flex: 1,
-              marginBottom: 10,
-              height: 120,
-              padding: 10,
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 8,
-              borderWidth: 1,
-              borderColor: Themes[colorScheme].default.colors.onSurface,
-            }}
-          >
-            <IconButton icon="book-education" size={32} />
-            <Text variant="bodyMedium">{item.nome}</Text>
-          </Surface>
-        )}
+        renderItem={({ item }) => {
+          const { icon, color } = getSubjectDataByName(item.nome);
+
+          return (
+            <TouchableOpacity
+              onPress={() => console.log(`Clicou em ${item.nome}`)}
+              activeOpacity={0.8}
+              style={{
+                flex: 1,
+                height: 120,
+                marginBottom: 10,
+                backgroundColor: "#ffffff",
+                borderRadius: 8,
+                justifyContent: "center",
+                alignItems: "center",
+                shadowColor: "#000",
+                shadowOpacity: 0.05,
+                padding: 10,
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: color + "1A",
+                  padding: 12,
+                  borderRadius: 8,
+                  marginBottom: 8,
+                }}
+              >
+                <Icon source={icon} size={28} color={color} />
+              </View>
+              <Text style={{ fontSize: 14, textAlign: "center" }}>
+                {item.nome}
+              </Text>
+            </TouchableOpacity>
+          );
+        }}
         keyExtractor={(item) => item.id}
         contentContainerStyle={{
           paddingVertical: 10,
-          alignItems: "center",
+          paddingHorizontal: 10,
         }}
       />
     </View>
